@@ -16,13 +16,12 @@ body {
 }
 
 .hand-drawn-box {
-  background-image: url("img/Box Outline.png");
+  background-image: url("imgs/Box Outline.png");
   background-size: contain; 
   background-repeat: no-repeat;
   background-position: center;
   width: 500px; 
   height: 600px;
-  display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
