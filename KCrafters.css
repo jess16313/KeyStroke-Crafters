@@ -1,0 +1,47 @@
+body {
+    background-color: #e6d4e9;
+    font-family: American Typewriter, serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.title-image {
+    width: 50%;
+}
+
+.hand-drawn-box {
+    background-image: url("Box Outline.PNG");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 400px;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.hand-drawn-box p,
+.hand-drawn-box input {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.hand-drawn-box input[type="text"] {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 80%;
+}
