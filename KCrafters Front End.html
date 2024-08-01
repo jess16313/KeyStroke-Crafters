@@ -6,13 +6,18 @@
     <style>
       body {
         background-color: #e6d4e9;
-        font-family: Helvetica;
+        font-family: American Typewriter, serif;
         text-align: center;
         margin: 0;
         padding: 20px;
+        display: felx;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
       }
       .title-image{
-        width: 40%;
+        width: 50%;
         transform: rotate(-90deg);
       }
       .hand-drawn-box{
@@ -21,19 +26,33 @@
         padding: 20px;
         margin-top: 20px;
         margin-bottom: 20px;
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+
       }
+      .hand-drawn-box p, hand-drawn-box input {
+      margin: 0;
+      font-size: 1.2em;
+      }
+      .hand-drawn-box input[type="text"] {
+      margin-top: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 80%;
+    }
     </style>
   </head>
   <body>
-    <center>
       <img src= "Keystroke Crafters Title.PNG" alt = "Keystroke Crafters Title" class="title-image">
 
       <div class="hand-drawn-box">
-        <p>Please enter your name</p>
+        <p>Enter your name</p>
         <input type="text" name="username" placeholder="Your Name">
+        <p> *Must be at least 5 characters long<br>*Must contain letters and/or numbers</p>
       </div>
-    </center>
   </body>
   </html>
 
