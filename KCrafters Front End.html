@@ -18,23 +18,26 @@
       }
       .title-image{
         width: 50%;
-        transform: rotate(-90deg);
       }
       .hand-drawn-box{
         background-image: url("Box Outline.PNG");
-        background-cover: cover;
+        background-size: contains;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 300px;
+        height:200px;
         padding: 20px;
-        margin-top: 20px;
-        margin-bottom: 20px;
         display: flex;
         align-items: center;
-        flex-direction: column;
         justify-content: center;
+        box-sizing: border-box;
+        position: relative;
 
       }
       .hand-drawn-box p, hand-drawn-box input {
       margin: 0;
-      font-size: 1.2em;
+      text-align: center;
+      width: 100%;
       }
       .hand-drawn-box input[type="text"] {
       margin-top: 10px;
