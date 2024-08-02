@@ -156,19 +156,3 @@ void TypingGame::heapify(int n, int i) {
         heapify(n, largest);
     }
 }
-
-int main() {
-    TypingGame game;
-
-    // Sample data
-    game.addPlayer(1, 75.0, 95.0);
-    game.addPlayer(2, 80.0, 97.0);
-    game.addPlayer(3, 70.0, 92.0);
-
-    // Rank players
-    game.rankPlayersSpeed();
-    cout << endl;
-    game.rankPlayersAccuracy();
-
-    return 0;
-}
