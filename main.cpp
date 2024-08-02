@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 //#include BST, Hash Table, and Rank Player files
+#include "RankPlayer.cpp"
 using namespace std;
 
 bool checkKey(string input, string output){
@@ -8,7 +9,7 @@ bool checkKey(string input, string output){
     return false;
   }
   for(int i = 0; i < input.size(); i++) {
-    if(input[i] != output[i}){
+    if(input[i] != output[i]){
       return false;
     }
   }
@@ -46,7 +47,7 @@ int main() {
     } else if(option == "2"){
       //define a hash table object
       //create the game board
-    } else if(opiton == "3"){
+    } else if(option == "3"){
       running = false;
       break;
     }
@@ -60,7 +61,7 @@ int main() {
         }
         string output; //set equal to the root of the node
         string input;
-        cin << input;
+        cin >> input;
         if(!checkKey(input, output)){
           errorCount++;
         } else{
@@ -72,6 +73,20 @@ int main() {
     //add player to heap and sort (call function from inserted Rank Player file
     //display results
     //option to start again
+    double typingSpeed = wordCount / (wordCount + 3);  // Example calculation for typing speed
+    double accuracy = (wordCount / (wordCount + errorCount)) * 100;  // Example calculation for accuracy
+    game.addPlayer(playerID++, typingSpeed, accuracy);
+
+    cout << "Results:\n";
+    game.rankPlayersSpeed();  // Call to rank players by speed
+    game.rankPlayersAccuracy();  // Call to rank players by accuracy
+
+    cout << "Do you want to start again? (y/n): ";
+    char startAgain;
+    cin >> startAgain;
+    if(startAgain == 'n' || startAgain == 'N'){
+      running = false;
   }
   return 0;
+}
 }
