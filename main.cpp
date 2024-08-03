@@ -31,7 +31,7 @@ private:
     
 public:
     TypingGame();
-    void addPlayer(int id, double typingSpeed, double accuracy);
+    void addPlayer(string name, double typingSpeed, double accuracy);
     void startGame();
     void checkWord(const string& typedword);
     void rankPlayersSpeed(); // Sort players based on speed (merge sort)
@@ -44,6 +44,7 @@ public:
     void stopTimer();
     double getTime();
     int getErrorCount();
+    queue<string> getQueue();
     //string nextWord(hash obj)
     //return hash.getElement()
     //string nextWord(bst obj)
@@ -58,8 +59,8 @@ TypingGame::TypingGame() {
 };
 //initialize words list here ACTUALLY REMEMBER TO MKE IT a q
 // Add a new player
-void TypingGame::addPlayer(int id, double typingSpeed, double accuracy) {
-    Player newPlayer = { id, typingSpeed, accuracy };
+void TypingGame::addPlayer(string name, double typingSpeed, double accuracy) {
+    Player newPlayer = { name, typingSpeed, accuracy };
     players.push_back(newPlayer);
 }
 //Start the game 
@@ -120,7 +121,7 @@ void TypingGame::rankPlayersSpeed() {
     mergeSortPlayers(0, players.size() - 1);
     cout << "Ranked Players (by typing speed):\n";
     for (const auto& player : players) {
-        cout << "Player ID: " << player.id << ", Typing Speed: " << player.typingSpeed << " WPM\n";
+        cout << "Player ID: " << player.name << ", Typing Speed: " << player.typingSpeed << " WPM\n";
     }
 }
 // Merge sort algorithm to sort players
@@ -228,7 +229,7 @@ int main() {
         vector<string> wordQueue;
         {
             lock_guard<mutex> guard(gameMutex);
-            wordQueue = game.getWordQueue();
+            wordQueue = game.getQueue();
             game.startGame(); // Start game when fetching the first word
         }
         json response = {{"words", wordQueue}};

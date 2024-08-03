@@ -9,7 +9,7 @@
 <body class="gametext">
     <div id="timer">00:00</div>
     <div id="top-box">
-        <div id="word-display">Word will appear here</div>
+        <div id="word-display"></div>
     </div>
     <div id="middle-box">
         <form id="typing-form" onsubmit="submitTyping(event)">
@@ -51,7 +51,7 @@
             fetch('/start-typing')
                 .then(response => response.json())
                 .then(data => {
-                    displayWords(data.words);
+                    displayWords(data.wordQueue);
                 });
         }
 
@@ -77,7 +77,7 @@
                     document.getElementById('typing-input').disabled = true;
                     alert('Game over! You made three errors.');
                 } else {
-                    displayWords(data.words);
+                    displayWords(data.wordQueue);
                     document.getElementById('error-display').textContent = `Errors: ${data.errorCount}`;
                     document.getElementById('typing-input').value = '';
                 }
@@ -86,10 +86,10 @@
             .catch(error => console.error('There has been a problem with your fetch operation:', error));
         }
 
-        function displayWords(words) {
+        function displayWords(wordQueue) {
             const wordDisplay = document.getElementById('word-display');
             wordDisplay.innerHTML = ''; 
-            words.forEach(word => {
+            wordQueue.forEach(word => {
                 const wordElement = document.createElement('span');
                 wordElement.textContent = word + ' ';
                 wordDisplay.appendChild(wordElement);
