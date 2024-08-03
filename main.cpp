@@ -206,24 +206,12 @@ int main() {
 
     httplib::Server svr;
 
-    svr.Post("/Keystroke-Crafters/gamepage.html", [&](const httplib::Request& req, httplib::Response& res) {
-        auto username = req.get_param_value("username");
-
-        double defaultTypingSpeed = 0.0;
-        double defaultAccuracy = 0.0;
-
-        {
-            lock_guard<mutex> guard(gameMutex);
-            game.addPlayer(username, defaultTypingSpeed, defaultAccuracy);
-        }
-        res.set_redirect("/Keystroke-Crafters/gamepage.html");
-    });
-
     svr.Get("/start-typing", [&](const httplib::Request& req, httplib::Response& res) {
         string word;
         {
             lock_guard<mutex> guard(gameMutex);
             word = game.getNextWord();
+            game.startGame(); // Start game when fetching the first word
         }
         json response = {{"word", word}};
         res.set_content(response.dump(), "application/json");
