@@ -210,7 +210,8 @@ int main() {
 
     httplib::Server svr;
 
-     svr.Post("/start-game", [&](const httplib::Request& req, httplib::Response& res) {
+    // Endpoint for handling the form submission and redirecting to the game page
+    svr.Post("/start-game", [&](const httplib::Request& req, httplib::Response& res) {
         auto username = req.get_param_value("username");
 
         double defaultTypingSpeed = 0.0;
@@ -223,17 +224,19 @@ int main() {
         res.set_redirect("/Keystroke-Crafters/gamepage.html");
     });
 
+    // Endpoint for starting the game and fetching the first word
     svr.Get("/start-typing", [&](const httplib::Request& req, httplib::Response& res) {
-        string word;
+        vector<string> wordQueue;
         {
             lock_guard<mutex> guard(gameMutex);
-            word = game.getNextWord();
+            wordQueue = game.getWordQueue();
             game.startGame(); // Start game when fetching the first word
         }
-        json response = {{"word", words}};
+        json response = {{"words", wordQueue}};
         res.set_content(response.dump(), "application/json");
     });
 
+    // Endpoint for submitting a typed word
     svr.Post("/submit-word", [&](const httplib::Request& req, httplib::Response& res) {
         auto j = json::parse(req.body);
         string typedWord = j["typedWord"];
@@ -241,18 +244,18 @@ int main() {
         bool correct;
         int errorCount;
         double elapsedTime;
-        queue<string> nextWord;
+        vector<string> wordQueue;
         {
             lock_guard<mutex> guard(gameMutex);
             correct = game.checkWord(typedWord);
             errorCount = game.getErrorCount();
             elapsedTime = game.getElapsedTime();
-            nextWord = game.getNextWord();
+            wordQueue = game.getWordQueue();
         }
 
         json response = {
             {"correct", correct},
-            {"nextWord", nextWord},
+            {"words", wordQueue},
             {"errorCount", errorCount},
             {"elapsedTime", elapsedTime}
         };
