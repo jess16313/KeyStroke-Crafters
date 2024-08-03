@@ -10,9 +10,12 @@
     <img src="imgs/Keystroke Crafters Title.PNG" alt="Keystroke Crafters Title" class="title-image">
 
     <div class="hand-drawn-box">
+        <form action="/start-game" method= "post">
         <p>Enter your name</p>
-        <input type="text" name="username" placeholder="Your Name">
+        <input type="text" name="username" placeholder="Your Name" required pattern= ".{5,}" title = "Must be at least 5 characters long.">
         <p>*Must be at least 5 characters long<br>*Must contain letters and/or numbers</p>
+        <button type= "submit">Enter</button>
+    </form>
     </div>
 </body>
 </html>

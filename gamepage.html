@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Game</title>
+    <link rel="stylesheet" type="text/css" href="KCrafters.css">
+</head>
+<body>
+    <h1>Welcome to the Typing Game</h1>
+    <div id="game-container">
+        <p>Start typing the words below as fast and accurately as you can!</p>
+        <div id="word-display">Word will appear here</div>
+        <input type="text" id="typing-input" placeholder="Type here...">
+        <button id="submit-button" onclick="submitTyping()">Submit</button>
+    </div>
+    <script>
+        function startGame() {
+            fetch('/start-typing')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('word-display').textContent = data.word;
+                });
+        }
+
+        function submitTyping() {
+            const typedWord = document.getElementById('typing-input').value;
+            fetch('/submit-typing', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ word: typedWord }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('word-display').textContent = data.nextWord;
+                document.getElementById('typing-input').value = '';
+            });
+        }
+
+        startGame();
+    </script>
+</body>
+</html>

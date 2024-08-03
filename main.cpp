@@ -1,8 +1,12 @@
+#include <httplib.h>
 #include <iostream>
 #include <vector>
 #include <string>
 #include <algorithm>
 #include <map>
+#include <mutex>
+
+using json = nlohman::json;
 using namespace std;
 
 // Data Structure Definitions
@@ -159,16 +163,68 @@ void TypingGame::heapify(int n, int i) {
 
 int main() {
     TypingGame game;
+    mutex gameMutex;
 
-    // Sample data
-    game.addPlayer(1, 75.0, 95.0);
-    game.addPlayer(2, 80.0, 97.0);
-    game.addPlayer(3, 70.0, 92.0);
+    httplib::Server svr;
 
-    // Rank players
-    game.rankPlayersSpeed();
-    cout << endl;
-    game.rankPlayersAccuracy();
+    svr.Post("/start-game", [&](const httplib::Requesst& req, httplib::Response& res) {
+    auto username = req.get_param_value("username");
+
+    double defaultTypingSpeed = 0.0;
+    double defaultAccuracy = 0.0;
+
+    {
+        lock_guard<mutex> guard(gameMutex);
+        game.addPlayer(username, defaultTypingSpeed,defaultAccuracy);
+    }
+    res.set_redirect("/gamepage.html");
+});
+
+  svr.Get("/start-typing", [&](const httplib::Request& req, httplib::Response& res) {
+        string word;
+        {
+            lock_guard<mutex> guard(gameMutex);
+            word = game.getNextWord();
+        }
+        json response = {{"word", word}};
+        res.set_content(response.dump(), "application/json");
+    });
+
+    svr.Post("/submit-typing", [&](const httplib::Request& req, httplib::Response& res) {
+        auto j = json::parse(req.body);
+        string typedWord = j["word"];
+
+        double speed, accuracy;
+        {
+            lock_guard<mutex> guard(gameMutex);
+            game.handleTyping(typedWord, speed, accuracy);
+        }
+
+        string nextWord;
+        {
+            lock_guard<mutex> guard(gameMutex);
+            nextWord = game.getNextWord();
+        }
+
+        json response = {{"nextWord", nextWord}};
+        res.set_content(response.dump(), "application/json");
+    });
+
+    // Serve static files (like the game page)
+    svr.set_base_dir(".");
+
+    svr.set_base_dir(".");
+    svr.listen("localhost",8080);
 
     return 0;
 }
+
+    // // Sample data
+    // game.addPlayer(1, 75.0, 95.0);
+    // game.addPlayer(2, 80.0, 97.0);
+    // game.addPlayer(3, 70.0, 92.0);
+
+    // // Rank players
+    // game.rankPlayersSpeed();
+    // cout << endl;
+    // game.rankPlayersAccuracy();
