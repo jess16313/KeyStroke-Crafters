@@ -1,6 +1,7 @@
 #include <iostream>
 #include <random>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -88,8 +89,15 @@ class HashTable{
     size++;
     updateLoad();
   }
-  void initializeHash(){
-        //code
+  void initializeHash(){ //currently only adds first 10 words of database
+        ifstream file("google-books-common-words.txt");
+        string word;
+        getline(file, word);
+        for(int i = 0; i < 10; i++){
+            word = word.substr(0,word.find(' '));
+            addElement(word);
+            getline(file, word);
+        }
     }
   string getElement(){ //get random element from the hash table, removed it
       string a;
