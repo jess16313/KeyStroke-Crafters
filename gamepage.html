@@ -58,7 +58,7 @@
         }
 
         function startGame() {
-            fetch('start-typing.json')
+            fetch('/start-typing')
                 .then(response => response.json())
                 .then(data => {
                     displayWords(data.words);
@@ -68,7 +68,7 @@
         function submitTyping(event) {
             event.preventDefault();
             const typedWord = document.getElementById('typing-input').value;
-            fetch('submit-word.json', {
+            fetch('/submit-word', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

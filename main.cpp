@@ -51,13 +51,12 @@ public:
     //reset function
 };
 // Constructor
-TypingGame::TypingGame() {
+TypingGame::TypingGame()  : errorCount(0), timerStarted(false){
     hash.initializeHash();
     for(int i = 0; i < 5; i++){
         words.enqueue(hash.getElement());
     }
 };
-//initialize words list here ACTUALLY REMEMBER TO MKE IT a q
 // Add a new player
 void TypingGame::addPlayer(string name, double typingSpeed, double accuracy) {
     Player newPlayer = { name, typingSpeed, accuracy };
@@ -65,7 +64,6 @@ void TypingGame::addPlayer(string name, double typingSpeed, double accuracy) {
 }
 //Start the game 
 void startGame(){
-    currentWordIndex = 0;
     errorCount = 0;
     timerStarted = false;
 }
@@ -81,7 +79,7 @@ void stopTimer(){
 //Get the time it took for the player to make three mistakes
 double getTime(){
     if (timerstarted){
-        chrono::duration,double. elapsed = chrono::steady_clock::now() - startTime;
+        chrono::duration<double> elapsed = chrono::steady_clock::now() - startTime;
         return elapsed.count();
     }
     return 0;
@@ -96,7 +94,8 @@ bool checkWord(const string& typedword){
         starttimer();
     }
 
-    if (typedword == words.top()){
+    if (typedword == words.front()){
+        words.pop();
         return true;
     } else{
         errorcount++;
@@ -108,13 +107,18 @@ bool checkWord(const string& typedword){
 }
 //getnetwordfunction
 string getNextWord(){
-    words.dequeue();
-    words.enqueue(hash.getElement());
-    return words.top();
+    return words.front();
 }
 //getindexcount funciton
 queue<string> getQueue(){
-    return words;
+    vector<string> wordQueue;
+    queue<string> temp = words;
+
+    while (!temp.empthy()){
+        wordQueue.push_back(temp.front());
+        temp.pop();
+    }
+    return wordqueue;
 }
 // Sort players based on performance
 void TypingGame::rankPlayersSpeed() {
@@ -212,7 +216,7 @@ int main() {
     httplib::Server svr;
 
     // Endpoint for handling the form submission and redirecting to the game page
-    svr.Post("/Keystroke-Crafters/gamepage.html", [&](const httplib::Request& req, httplib::Response& res) {
+    svr.Post("/start-game", [&](const httplib::Request& req, httplib::Response& res) {
         auto username = req.get_param_value("username");
 
         double defaultTypingSpeed = 0.0;
@@ -222,6 +226,7 @@ int main() {
             lock_guard<mutex> guard(gameMutex);
             game.addPlayer(username, defaultTypingSpeed, defaultAccuracy);
         }
+        res.set_redirect("/Keystroke-Crafters/gamepage.html");
     });
 
     // Endpoint for starting the game and fetching the first word
