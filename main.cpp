@@ -89,7 +89,7 @@ int main() {
 
     httplib::Server svr;
 
-    svr.Post("/gamepage.html", [&](const httplib::Request& req, httplib::Response& res) {
+    svr.Post("/start-game", [&](const httplib::Request& req, httplib::Response& res) {
         auto username = req.get_param_value("username");
 
         double defaultTypingSpeed = 0.0;
@@ -99,7 +99,7 @@ int main() {
             lock_guard<mutex> guard(gameMutex);
             game.addPlayer(username, defaultTypingSpeed, defaultAccuracy);
         }
-        res.set_redirect("/game.html");
+        res.set_redirect("/gamepage.html");
     });
 
     svr.Get("/start-typing", [&](const httplib::Request& req, httplib::Response& res) {
