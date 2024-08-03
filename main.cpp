@@ -53,8 +53,15 @@ public:
 // Constructor
 TypingGame::TypingGame()  : errorCount(0), timerStarted(false){
     hash.initializeHash();
-    for(int i = 0; i < 5; i++){
-        words.enqueue(hash.getElement());
+    HashTable hashTable;
+    hashTable.addWord("example");
+    hashTable.addWord("typing");
+    hashTable.addWord("words");
+    hashTable.addWord("game");
+    hashTable.addWord("test");
+    auto allWords = hashTable.getAllWords();
+    for (const auto& word : allWords) {
+        words.push(word);
     }
 };
 // Add a new player
