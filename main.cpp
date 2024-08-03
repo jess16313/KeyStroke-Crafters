@@ -89,7 +89,7 @@ int main() {
 
     httplib::Server svr;
 
-    svr.Post("/start-game", [&](const httplib::Request& req, httplib::Response& res) {
+    svr.Post("/gamepage.html", [&](const httplib::Request& req, httplib::Response& res) {
         auto username = req.get_param_value("username");
 
         double defaultTypingSpeed = 0.0;
