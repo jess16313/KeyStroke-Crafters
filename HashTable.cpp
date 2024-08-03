@@ -44,33 +44,31 @@ class HashTable{
     }
   void updateLoad(){
     loadFactor = size/capacity;
-//    if(loadFactor >= maxLoad){ //rehash
-//        int oldCap = capacity;
-//        capacity *= 2;
-//        Node* newWords[capacity];
-//        for (int i = 0; i < capacity; ++i) {
-//            newWords[i] = nullptr;
-//        }
-//        for (int i = 0; i < oldCap; ++i) {
-//            Node* current = words[i];
-//            while (current != nullptr) {
-//                Node* nextNode = current->next;
-//
-//                // Recompute the hash for the current node
-//                int index = hashFunction(current->data);
-//
-//                // Insert into the new hash table
-//                current->next = newWords[index];
-//                if (newWords[index] != nullptr) {
-//                    newWords[index]->prev = current;
-//                }
-//                current->prev = nullptr;
-//                newWords[index] = current;
-//
-//                current = nextNode;
-//            }
-//        }
-//    }
+    if(loadFactor >= maxLoad){ //rehash
+        int oldCap = capacity;
+        capacity *= 2;
+        Node* newWords[capacity];
+        for(int i = 0; i < capacity; ++i){
+            newWords[i] = nullptr;
+        }
+        for(int i = 0; i < oldCap; ++i){
+            Node* current = words[i];
+            while (current != nullptr){
+                int index = hashFunction(current->data);
+                if(newWords[index] == nullptr){
+                    newWords[index] = new Node(current->data);
+                } else{
+                    Node* temp = newWords[index];
+                    while (temp->next != nullptr) {
+                        temp = temp->next;
+                    }
+                    temp->next = new Node(current->data);
+                    temp->next->prev = temp;
+                }
+                current = current->next;
+            }
+        }
+    }
   }
 
   void addElement(string a){
