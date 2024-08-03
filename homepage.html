@@ -8,15 +8,22 @@
 </head>
 <body>
     <center>
-        <img src="imgs/Keystroke Crafters Title.PNG" alt="Keystroke Crafters Title" class="title-image">
+        <img src="Keystroke Crafters Title.PNG" alt="Keystroke Crafters Title" class="title-image">
         <div class="hand-drawn-box">
-            <form action="/Keystroke-Crafters/gamepage.html" method="post">
+            <form id="start-game-form">
                 <p>Enter your name</p>
-                <input type="text" name="username" placeholder="Your Name" required pattern=".{5,}" title="Must be at least 5 characters long">
-                <p>*Must be at least 5 characters long<br>*Must contain letters and/or numbers</p>
+                <input type="text" name="username" placeholder="Your Name" required>
                 <button type="submit">Enter</button>
             </form>
         </div>
     </center>
+    <script>
+        document.getElementById('start-game-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const username = event.target.username.value;
+            localStorage.setItem('username', username); // Store username in localStorage
+            window.location.href = 'gamepage.html'; // Redirect to gamepage.html
+        });
+    </script>
 </body>
 </html>
