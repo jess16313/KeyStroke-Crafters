@@ -44,3 +44,44 @@ body {
     border-radius: 5px;
     width: 80%;
 }
+
+.gametext h1{
+    font-family:'Playfair Display', serif;
+}
+
+.gametext{
+    background: linear-gradient(to-left, #BDE5F7, #E6D4E9);
+    display: felx;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+#timer { 
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+ }
+
+ #top-box{
+    width: 80%;
+    padding: 20 px;
+    background-color: white;
+    border: 1px solid #CCC;
+    margin-bottom: 20 px;
+ }
+
+ #bottom-box{
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+    border:1px solid #CCC;
+ }
+
+ #typing-input{
+    width:100%;
+    padding: 10px;
+    fot-size: 16px;
+ }

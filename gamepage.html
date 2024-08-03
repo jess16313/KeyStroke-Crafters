@@ -6,15 +6,18 @@
     <title>Typing Game</title>
     <link rel="stylesheet" type="text/css" href="KCrafters.css">
 </head>
-<body>
-    <h1>Welcome to the Typing Game</h1>
-    <div id="game-container">
-        <p>Start typing the words below as fast and accurately as you can!</p>
-        <div id="word-display">Word will appear here</div>
-        <input type="text" id="typing-input" placeholder="Type here...">
-        <button id="submit-button" onclick="submitTyping()">Submit</button>
+<body class = "gametext">
+    <div id="timer">00:00</div>
+    <div id="top-box">
+        <div id="word-display"></div>
+        <form action="/submit-word" method="post">
+            <input type="text" id="typing-input" placeholder="Start typing...">
+        </form>
     </div>
-    <script>
+    <div id="bottom-box">
+        <div id="error-display">Errors: 0</div>
+    </div>
+<!--     <script>
         function startGame() {
             fetch('/start-typing')
                 .then(response => response.json())
@@ -22,7 +25,6 @@
                     document.getElementById('word-display').textContent = data.word;
                 });
         }
-
         function submitTyping() {
             const typedWord = document.getElementById('typing-input').value;
             fetch('/submit-typing', {
@@ -38,8 +40,7 @@
                 document.getElementById('typing-input').value = '';
             });
         }
-
         startGame();
-    </script>
+    </script> -->
 </body>
 </html>

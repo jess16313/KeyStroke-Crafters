@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <map>
 #include <mutex>
+#include <chrono>
 #include "RankPlayer.cpp" 
 #include "json.hpp" // Include the nlohmann/json library
 
@@ -21,17 +22,30 @@ struct Player {
 class TypingGame {
 private:
     vector<Player> players; // Player data storage
-    map<int, string> words; // Words dataset
+    vector<string> words; // Words pulled from data structure
+    chrono::steady_clock::time_point startTime;
+    bool timerStarted;
+    int errorcount;
     
 public:
     TypingGame();
     void addPlayer(int id, double typingSpeed, double accuracy);
+    void startGame();
+    void checkWord(const string& typedword);
     void rankPlayersSpeed(); // Sort players based on speed (merge sort)
     void rankPlayersAccuracy(); // Sort players based on accuracy (heap sort)
     void mergeSortPlayers(int left, int right);
     void merge(int left, int mid, int right);
     void heapify(int n, int i);
     void heapSort();
+    void startTimer();
+    void stopTimer();
+    double getTime();
+    int getErrorCount();
+    //string nextWord(hash obj)
+    //return hash.getElement()
+    //string nextWord(bst obj)
+    //reset function
 };
 // Constructor
 TypingGame::TypingGame() = default;
@@ -39,6 +53,54 @@ TypingGame::TypingGame() = default;
 void TypingGame::addPlayer(int id, double typingSpeed, double accuracy) {
     Player newPlayer = { id, typingSpeed, accuracy };
     players.push_back(newPlayer);
+}
+//Start the game 
+void startGame(){
+    currentWordIndex = 0;
+    errorCount = 0;
+    timerStarted = false;
+}
+//Start the timer
+void startTimer(){
+    startTime = chrono::steady_clock::now();
+    timerStarted = true;
+}
+//Stop the timer
+void stopTimer(){
+    timerStarted = false;
+}
+//Get the time it took for the player to make three mistakes
+double getTime(){
+    if (timerstarted){
+        chrono::duration,double. elapsed = chrono::steady_clock::now() - startTime;
+        return elapsed.count();
+    }
+    return 0;
+}
+//Getting the error count
+int getErrorCount(){
+    return errorcount;
+}
+//Check if the word was correctly typed
+void checkWord(const string& word){
+    if (!timerStarted){
+        starttimer();
+    }
+
+    if (typedword == words[index]){
+        index++;
+        if (index >= words.size()){
+            //rehash fr
+        }
+    } else{
+        errorcount++;
+        if (errorcount >= 3){
+            stopTimer();
+        }
+    }
+}
+string getNextWord(){
+    return words[index];
 }
 // Sort players based on performance
 void TypingGame::rankPlayersSpeed() {
@@ -158,26 +220,36 @@ int main() {
         res.set_content(response.dump(), "application/json");
     });
 
-    svr.Post("/submit-typing", [&](const httplib::Request& req, httplib::Response& res) {
-        auto j = json::parse(req.body);
-        string typedWord = j["word"];
+    svr.Post("/submit-word", [&](const httplib::Request& req, httplib::Response& res) {
+         auto typedWord = req.get_param_value("typedWord");
 
-        double speed, accuracy;
         {
             lock_guard<mutex> guard(gameMutex);
-            game.handleTyping(typedWord, speed, accuracy);
+            game.checkWord(typedWord);
         }
 
         string nextWord;
+        int errorCount;
+        double elapsedTime;
         {
             lock_guard<mutex> guard(gameMutex);
             nextWord = game.getNextWord();
+            errorCount = game.getErrorCount();
+            elapsedTime = game.getElapsedTime();
         }
 
-        json response = {{"nextWord", nextWord}};
-        res.set_content(response.dump(), "application/json");
+        if (errorCount >= 3) {
+            game.stopTimer();
+            res.set_content("Game over! You made three errors.", "text/plain");
+        } else {
+            json response = {
+                {"nextWord", nextWord},
+                {"errorCount", errorCount},
+                {"elapsedTime", elapsedTime}
+            };
+            res.set_content(response.dump(), "application/json");
+        }
     });
-
     // Serve static files (like the game page)
     svr.set_base_dir(".");
 
