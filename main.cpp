@@ -221,7 +221,7 @@ int main() {
             lock_guard<mutex> guard(gameMutex);
             game.addPlayer(username, defaultTypingSpeed, defaultAccuracy);
         }
-        res.set_redirect("/Keystroke-Crafters/gamepage.html");
+        res.set_redirect("gamepage.html");
     });
 
     // Endpoint for starting the game and fetching the first word
