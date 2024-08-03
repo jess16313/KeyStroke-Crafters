@@ -211,7 +211,7 @@ int main() {
     httplib::Server svr;
 
     // Endpoint for handling the form submission and redirecting to the game page
-    svr.Post("/start-game", [&](const httplib::Request& req, httplib::Response& res) {
+    svr.Post("/Keystroke-Crafters/gamepage.html", [&](const httplib::Request& req, httplib::Response& res) {
         auto username = req.get_param_value("username");
 
         double defaultTypingSpeed = 0.0;
@@ -221,7 +221,6 @@ int main() {
             lock_guard<mutex> guard(gameMutex);
             game.addPlayer(username, defaultTypingSpeed, defaultAccuracy);
         }
-        res.set_redirect("gamepage.html");
     });
 
     // Endpoint for starting the game and fetching the first word
