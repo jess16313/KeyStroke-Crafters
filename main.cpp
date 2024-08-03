@@ -6,7 +6,8 @@
 #include <map>
 #include <mutex>
 #include <chrono>
-#include "RankPlayer.cpp" 
+#include "RankPlayer.cpp"
+#include "HashTable.cpp" 
 #include "json.hpp" // Include the nlohmann/json library
 
 using json = nlohmann::json;
@@ -22,11 +23,11 @@ struct Player {
 class TypingGame {
 private:
     vector<Player> players; // Player data storage
-    vector<string> words; // Words pulled from data structure
+    queue<string> words; // Words pulled from data structure
+    HashTable hash;
     chrono::steady_clock::time_point startTime;
     bool timerStarted;
     int errorcount;
-    int index;
     
 public:
     TypingGame();
@@ -43,14 +44,19 @@ public:
     void stopTimer();
     double getTime();
     int getErrorCount();
-    int getIndex();
     //string nextWord(hash obj)
     //return hash.getElement()
     //string nextWord(bst obj)
     //reset function
 };
 // Constructor
-TypingGame::TypingGame() = default;
+TypingGame::TypingGame() {
+    hash.initializeHash();
+    for(int i = 0; i < 5; i++){
+        words.enqueue(hash.getElement());
+    }
+};
+//initialize words list here ACTUALLY REMEMBER TO MKE IT a q
 // Add a new player
 void TypingGame::addPlayer(int id, double typingSpeed, double accuracy) {
     Player newPlayer = { id, typingSpeed, accuracy };
@@ -84,16 +90,12 @@ int getErrorCount(){
     return errorcount;
 }
 //Check if the word was correctly typed
-bool checkWord(const string& word){
+bool checkWord(const string& typedword){
     if (!timerStarted){
         starttimer();
     }
 
-    if (typedword == words[index]){
-        index++;
-        if (index >= words.size()){
-            //rehash fr
-        }
+    if (typedword == words.top()){
         return true;
     } else{
         errorcount++;
@@ -105,11 +107,13 @@ bool checkWord(const string& word){
 }
 //getnetwordfunction
 string getNextWord(){
-    return words[index];
+    words.dequeue();
+    words.enqueue(hash.getElement());
+    return words.top();
 }
 //getindexcount funciton
-int getIndex(){
-    return index;
+queue<string> getQueue(){
+    return words;
 }
 // Sort players based on performance
 void TypingGame::rankPlayersSpeed() {
@@ -206,17 +210,32 @@ int main() {
 
     httplib::Server svr;
 
-    svr.Get("/start-typing", [&](const httplib::Request& req, httplib::Response& res) {
-        string word;
+    // Endpoint for handling the form submission and redirecting to the game page
+    svr.Post("/Keystroke-Crafters/gamepage.html", [&](const httplib::Request& req, httplib::Response& res) {
+        auto username = req.get_param_value("username");
+
+        double defaultTypingSpeed = 0.0;
+        double defaultAccuracy = 0.0;
+
         {
             lock_guard<mutex> guard(gameMutex);
-            word = game.getNextWord();
+            game.addPlayer(username, defaultTypingSpeed, defaultAccuracy);
+        }
+    });
+
+    // Endpoint for starting the game and fetching the first word
+    svr.Get("/start-typing", [&](const httplib::Request& req, httplib::Response& res) {
+        vector<string> wordQueue;
+        {
+            lock_guard<mutex> guard(gameMutex);
+            wordQueue = game.getWordQueue();
             game.startGame(); // Start game when fetching the first word
         }
-        json response = {{"word", word}};
+        json response = {{"words", wordQueue}};
         res.set_content(response.dump(), "application/json");
     });
 
+    // Endpoint for submitting a typed word
     svr.Post("/submit-word", [&](const httplib::Request& req, httplib::Response& res) {
         auto j = json::parse(req.body);
         string typedWord = j["typedWord"];
@@ -224,18 +243,18 @@ int main() {
         bool correct;
         int errorCount;
         double elapsedTime;
-        string nextWord;
+        vector<string> wordQueue;
         {
             lock_guard<mutex> guard(gameMutex);
             correct = game.checkWord(typedWord);
             errorCount = game.getErrorCount();
             elapsedTime = game.getElapsedTime();
-            nextWord = game.getNextWord();
+            wordQueue = game.getWordQueue();
         }
 
         json response = {
             {"correct", correct},
-            {"nextWord", nextWord},
+            {"words", wordQueue},
             {"errorCount", errorCount},
             {"elapsedTime", elapsedTime}
         };

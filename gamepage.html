@@ -12,7 +12,7 @@
         <div id="word-display">Word will appear here</div>
     </div>
     <div id="middle-box">
-        <form action="/submit-word" method="post" id="typing-form" onsubmit="submitTyping(event)">
+        <form id="typing-form" onsubmit="submitTyping(event)">
             <input type="text" id="typing-input" name="typedWord" placeholder="Start typing..." autocomplete="off" oninput="startTimerIfNeeded()">
             <button type="submit">Submit</button>
         </form>
@@ -21,13 +21,6 @@
         <div id="error-display">Errors: 0</div>
     </div>
     <script>
-        function startGame() {
-            fetch('/start-typing')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('word-display').textContent = data.word;
-                });
-        }
         let timerInterval;
         let startTime;
         let timerStarted = false;
@@ -58,12 +51,12 @@
             fetch('/start-typing')
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById('word-display').textContent = data.word;
+                    displayWords(data.words);
                 });
         }
 
         function submitTyping(event) {
-            cevent.preventDefault();
+            event.preventDefault();
             const typedWord = document.getElementById('typing-input').value;
             fetch('/submit-word', {
                 method: 'POST',
@@ -72,31 +65,46 @@
                 },
                 body: JSON.stringify({ typedWord }),
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
                 if (data.errorCount >= 3) {
+                    stopTimer();
                     document.getElementById('typing-input').disabled = true;
                     alert('Game over! You made three errors.');
                 } else {
-                    document.getElementById('word-display').textContent = data.nextWord;
+                    displayWords(data.words);
                     document.getElementById('error-display').textContent = `Errors: ${data.errorCount}`;
                     document.getElementById('typing-input').value = '';
                 }
                 document.getElementById('timer').textContent = formatTime(data.elapsedTime);
+            })
+            .catch(error => console.error('There has been a problem with your fetch operation:', error));
+        }
+
+        function displayWords(words) {
+            const wordDisplay = document.getElementById('word-display');
+            wordDisplay.innerHTML = ''; 
+            words.forEach(word => {
+                const wordElement = document.createElement('span');
+                wordElement.textContent = word + ' ';
+                wordDisplay.appendChild(wordElement);
             });
         }
 
-        function formateTime(seconds){
+        function formatTime(seconds) {
             const minutes = Math.floor(seconds / 60);
             const secs = Math.floor(seconds % 60);
             return `${minutes < 10 ? '0' : ''}${minutes}:${secs < 10 ? '0' : ''}${secs}`;
         }
 
-
         document.addEventListener('DOMContentLoaded', (event) => {
             startGame();
         });
-        
     </script>
 </body>
 </html>
