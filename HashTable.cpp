@@ -89,7 +89,7 @@ class HashTable{
     size++;
     updateLoad();
   }
-  void initializeHash(){
+  void initializeHash(){ //currently only adds first 10 words of database
         ifstream file("google-books-common-words.txt");
         string word;
         getline(file, word);
