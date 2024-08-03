@@ -9,9 +9,12 @@
 <body class="gametext">
     <div id="timer">00:00</div>
     <div id="top-box">
-        <div id="word-display"></div>
-        <form action="/submit-word" method="post" id="typing-form">
-            <input type="text" id="typing-input" placeholder="Start typing..." oninput="submitTyping()">
+        <div id="word-display">Word will appear here</div>
+    </div>
+    <div id="middle-box">
+        <form action="/submit-word" method="post" id="typing-form" onsubmit="submitTyping(event)">
+            <input type="text" id="typing-input" name="typedWord" placeholder="Start typing..." autocomplete="off" oninput="startTimerIfNeeded()">
+            <button type="submit">Submit</button>
         </form>
     </div>
     <div id="bottom-box">
@@ -79,13 +82,21 @@
                     document.getElementById('error-display').textContent = `Errors: ${data.errorCount}`;
                     document.getElementById('typing-input').value = '';
                 }
-                document.getElementById('timer').textContent = data.elapsedTime;
+                document.getElementById('timer').textContent = formatTime(data.elapsedTime);
             });
         }
+
+        function formateTime(seconds){
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes < 10 ? '0' : ''}${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
 
         document.addEventListener('DOMContentLoaded', (event) => {
             startGame();
         });
+        
     </script>
 </body>
 </html>
