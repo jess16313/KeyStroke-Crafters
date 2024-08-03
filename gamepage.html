@@ -6,12 +6,12 @@
     <title>Typing Game</title>
     <link rel="stylesheet" type="text/css" href="KCrafters.css">
 </head>
-<body class = "gametext">
+<body class="gametext">
     <div id="timer">00:00</div>
     <div id="top-box">
         <div id="word-display"></div>
         <form action="/submit-word" method="post" id="typing-form">
-            <input type="text" id="typing-input" placeholder="Start typing...">
+            <input type="text" id="typing-input" placeholder="Start typing..." oninput="submitTyping()">
         </form>
     </div>
     <div id="bottom-box">
@@ -25,22 +25,67 @@
                     document.getElementById('word-display').textContent = data.word;
                 });
         }
-        function submitTyping() {
+        let timerInterval;
+        let startTime;
+        let timerStarted = false;
+
+        function startTimerIfNeeded() {
+            if (!timerStarted) {
+                startTimer();
+                timerStarted = true;
+            }
+        }
+
+        function startTimer() {
+            startTime = Date.now();
+            timerInterval = setInterval(() => {
+                const elapsedTime = Date.now() - startTime;
+                const minutes = Math.floor(elapsedTime / 60000);
+                const seconds = Math.floor((elapsedTime % 60000) / 1000);
+                document.getElementById('timer').textContent = 
+                    `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function startGame() {
+            fetch('/start-typing')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('word-display').textContent = data.word;
+                });
+        }
+
+        function submitTyping(event) {
+            cevent.preventDefault();
             const typedWord = document.getElementById('typing-input').value;
-            fetch('/submit-typing', {
+            fetch('/submit-word', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ word: typedWord }),
+                body: JSON.stringify({ typedWord }),
             })
             .then(response => response.json())
             .then(data => {
-                document.getElementById('word-display').textContent = data.nextWord;
-                document.getElementById('typing-input').value = '';
+                if (data.errorCount >= 3) {
+                    document.getElementById('typing-input').disabled = true;
+                    alert('Game over! You made three errors.');
+                } else {
+                    document.getElementById('word-display').textContent = data.nextWord;
+                    document.getElementById('error-display').textContent = `Errors: ${data.errorCount}`;
+                    document.getElementById('typing-input').value = '';
+                }
+                document.getElementById('timer').textContent = data.elapsedTime;
             });
         }
-        startGame();
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            startGame();
+        });
     </script>
 </body>
 </html>

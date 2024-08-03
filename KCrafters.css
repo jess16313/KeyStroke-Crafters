@@ -1,6 +1,6 @@
 body {
     background-color: #e6d4e9;
-    font-family: American Typewriter, serif;
+    font-family: 'American Typewriter', serif;
     text-align: center;
     margin: 0;
     padding: 20px;
@@ -16,19 +16,18 @@ body {
 }
 
 .hand-drawn-box {
-  background-image: url("imgs/Box Outline.png");
-  background-size: contain; 
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 500px; 
-  height: 600px;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  box-sizing: border-box;
-  position: relative;
+    background-image: url("imgs/Box Outline.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 500px;
+    height: 600px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
 }
-
 
 .hand-drawn-box p,
 .hand-drawn-box input {
@@ -45,43 +44,49 @@ body {
     width: 80%;
 }
 
-.gametext h1{
-    font-family:'Playfair Display', serif;
+.gametext h1 {
+    font-family: 'Playfair Display', serif;
 }
 
-.gametext{
-    background: linear-gradient(to-left, #BDE5F7, #E6D4E9);
-    display: felx;
+.gametext {
+    background: linear-gradient(to left, #BDE5F7, #E6D4E9);
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
 }
-#timer { 
+
+#timer {
     position: absolute;
     top: 10px;
     left: 10px;
     font-size: 24px;
- }
+}
 
- #top-box{
-    width: 80%;
-    padding: 20 px;
-    background-color: white;
-    border: 1px solid #CCC;
-    margin-bottom: 20 px;
- }
-
- #bottom-box{
+#top-box {
     width: 80%;
     padding: 20px;
     background-color: white;
-    border:1px solid #CCC;
- }
+    border: 1px solid #CCC;
+    margin-bottom: 20px;
+}
 
- #typing-input{
-    width:100%;
+#bottom-box {
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #CCC;
+}
+
+#typing-input {
+    width: 100%;
     padding: 10px;
-    fot-size: 16px;
- }
+    font-size: 16px;
+}
+
+#word-display {
+    font-size: 24px;
+    margin-bottom: 20px;
+}

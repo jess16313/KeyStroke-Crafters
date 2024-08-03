@@ -26,6 +26,7 @@ private:
     chrono::steady_clock::time_point startTime;
     bool timerStarted;
     int errorcount;
+    int index;
     
 public:
     TypingGame();
@@ -42,6 +43,7 @@ public:
     void stopTimer();
     double getTime();
     int getErrorCount();
+    int getIndex();
     //string nextWord(hash obj)
     //return hash.getElement()
     //string nextWord(bst obj)
@@ -82,7 +84,7 @@ int getErrorCount(){
     return errorcount;
 }
 //Check if the word was correctly typed
-void checkWord(const string& word){
+bool checkWord(const string& word){
     if (!timerStarted){
         starttimer();
     }
@@ -92,15 +94,22 @@ void checkWord(const string& word){
         if (index >= words.size()){
             //rehash fr
         }
+        return true;
     } else{
         errorcount++;
         if (errorcount >= 3){
             stopTimer();
         }
+        return false;
     }
 }
+//getnetwordfunction
 string getNextWord(){
     return words[index];
+}
+//getindexcount funciton
+int getIndex(){
+    return index;
 }
 // Sort players based on performance
 void TypingGame::rankPlayersSpeed() {
@@ -221,35 +230,30 @@ int main() {
     });
 
     svr.Post("/submit-word", [&](const httplib::Request& req, httplib::Response& res) {
-         auto typedWord = req.get_param_value("typedWord");
+        auto j = json::parse(req.body);
+        string typedWord = j["typedWord"];
 
-        {
-            lock_guard<mutex> guard(gameMutex);
-            game.checkWord(typedWord);
-        }
-
-        string nextWord;
+        bool correct;
         int errorCount;
         double elapsedTime;
+        string nextWord;
         {
             lock_guard<mutex> guard(gameMutex);
-            nextWord = game.getNextWord();
+            correct = game.checkWord(typedWord);
             errorCount = game.getErrorCount();
             elapsedTime = game.getElapsedTime();
+            nextWord = game.getNextWord();
         }
 
-        if (errorCount >= 3) {
-            game.stopTimer();
-            res.set_content("Game over! You made three errors.", "text/plain");
-        } else {
-            json response = {
-                {"nextWord", nextWord},
-                {"errorCount", errorCount},
-                {"elapsedTime", elapsedTime}
-            };
-            res.set_content(response.dump(), "application/json");
-        }
+        json response = {
+            {"correct", correct},
+            {"nextWord", nextWord},
+            {"errorCount", errorCount},
+            {"elapsedTime", elapsedTime}
+        };
+        res.set_content(response.dump(), "application/json");
     });
+
     // Serve static files (like the game page)
     svr.set_base_dir(".");
 
