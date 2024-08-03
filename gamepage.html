@@ -10,14 +10,14 @@
     <div id="timer">00:00</div>
     <div id="top-box">
         <div id="word-display"></div>
-        <form action="/submit-word" method="post">
+        <form action="/submit-word" method="post" id="typing-form">
             <input type="text" id="typing-input" placeholder="Start typing...">
         </form>
     </div>
     <div id="bottom-box">
         <div id="error-display">Errors: 0</div>
     </div>
-<!--     <script>
+    <script>
         function startGame() {
             fetch('/start-typing')
                 .then(response => response.json())
@@ -41,6 +41,6 @@
             });
         }
         startGame();
-    </script> -->
+    </script>
 </body>
 </html>
