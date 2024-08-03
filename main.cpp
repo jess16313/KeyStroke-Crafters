@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <map>
 #include <mutex>
-#include "RankPlayer.cpp" // Ensure this file is in the correct directory and properly implemented
+#include "RankPlayer.cpp" 
 #include "json.hpp" // Include the nlohmann/json library
 
 using json = nlohmann::json;
@@ -38,6 +38,7 @@ public:
     }
 
     string getNextWord() {
+        // Add the hash table or BST here
         if (currentWordIndex >= wordList.size()) {
             currentWordIndex = 0; // Reset index if it exceeds the word list size
         }
@@ -99,7 +100,7 @@ int main() {
             lock_guard<mutex> guard(gameMutex);
             game.addPlayer(username, defaultTypingSpeed, defaultAccuracy);
         }
-        res.set_redirect("/gamepage.html");
+        res.set_redirect("/Keystroke-Crafters/gamepage.html");
     });
 
     svr.Get("/start-typing", [&](const httplib::Request& req, httplib::Response& res) {
