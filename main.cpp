@@ -11,7 +11,6 @@ using namespace std;
 
 
 // Constructor
-
 int main() {
     TypingGame game;
     mutex gameMutex; // Mutex for thread safety
@@ -32,24 +31,42 @@ int main() {
         res.set_redirect("/Keystroke-Crafters/gamepage.html");
     });
 
-    svr.Post("/start-typing", [&](const httplib::Request& req, httplib::Response& res) {
-        json j;
-        j["words"] = game.getQueue();
-        res.set_content(j.dump(), "application/json");
+    // Endpoint for starting the game and fetching the first word
+    svr.Get("/start-typing", [&](const httplib::Request& req, httplib::Response& res) {
+        vector<string> wordQueue;
+        {
+            lock_guard<mutex> guard(gameMutex);
+            wordQueue = game.getQueue();
+            game.startGame(); // Start game when fetching the first word
+        }
+        json response = {{"words", wordQueue}};
+        res.set_content(response.dump(), "application/json");
     });
 
+    // Endpoint for submitting a typed word
     svr.Post("/submit-word", [&](const httplib::Request& req, httplib::Response& res) {
-        auto body = json::parse(req.body);
-        string typedWord = body["typedWord"];
-        string currentWord = body["currentWord"];
+        auto j = json::parse(req.body);
+        string typedWord = j["typedWord"];
 
-        bool isCorrect = game.checkWord(typedWord);
-        json j;
-        if (isCorrect) {
-            j["nextWord"] = game.getNextWord();
+        bool correct;
+        int errorCount;
+        double elapsedTime;
+        vector<string> wordQueue;
+        {
+            lock_guard<mutex> guard(gameMutex);
+            correct = game.checkWord(typedWord);
+            errorCount = game.getErrorCount();
+            elapsedTime = game.getTime();
+            wordQueue = game.getQueue();
         }
-        j["isCorrect"] = isCorrect;
-        res.set_content(j.dump(), "application/json");
+
+        json response = {
+                {"correct", correct},
+                {"words", wordQueue},
+                {"errorCount", errorCount},
+                {"elapsedTime", elapsedTime}
+        };
+        res.set_content(response.dump(), "application/json");
     });
 
     // Serve static files (like the game page)

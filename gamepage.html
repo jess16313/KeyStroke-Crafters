@@ -27,8 +27,6 @@
         let timerInterval;
         let startTime;
         let timerStarted = false;
-        let wordsQueue = [];
-        let errorCount = 0;
 
         document.addEventListener('DOMContentLoaded', (event) => {
             const username = localStorage.getItem('username');
@@ -63,58 +61,53 @@
         }
 
         function startGame() {
-            fetch('/start-typing', {
-                method: 'POST'
-            })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
+            fetch('/start-typing')
+                .then(response => response.json())
                 .then(data => {
-                    console.log('Received words:', data.words);
-                    wordsQueue = data.words;
-                    displayWords();
-                })
-                .catch(error => console.error('There has been a problem with your fetch operation:', error));
+                    displayWords(data.words);
+                });
         }
 
         function submitTyping(event) {
             event.preventDefault();
             const typedWord = document.getElementById('typing-input').value;
-            const currentWord = wordsQueue[0];
-
             fetch('/submit-word', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ typedWord, currentWord }),
+                body: JSON.stringify({ typedWord }),
             })
             .then(response => response.json())
             .then(data => {
-                if (data.isCorrect) {
-                    wordsQueue.shift();
-                    wordsQueue.push(data.nextWord);
+                if (data.errorCount >= 3) {
+                    stopTimer();
+                    document.getElementById('typing-input').disabled = true;
+                    alert('Game over! You made three errors.');
                 } else {
-                    errorCount++;
-                    document.getElementById('error-display').textContent = `Errors: ${errorCount}`;
+                    displayWords(data.words);
+                    document.getElementById('error-display').textContent = `Errors: ${data.errorCount}`;
+                    document.getElementById('typing-input').value = '';
                 }
-                displayWords();
-                document.getElementById('typing-input').value = '';
+                document.getElementById('timer').textContent = formatTime(data.elapsedTime);
             })
             .catch(error => console.error('There has been a problem with your fetch operation:', error));
         }
 
-        function displayWords() {
+        function displayWords(words) {
             const wordDisplay = document.getElementById('word-display');
             wordDisplay.innerHTML = ''; 
-            wordsQueue.forEach(word => {
+            words.forEach(word => {
                 const wordElement = document.createElement('span');
                 wordElement.textContent = word + ' ';
                 wordDisplay.appendChild(wordElement);
             });
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes < 10 ? '0' : ''}${minutes}:${secs < 10 ? '0' : ''}${secs}`;
         }
     </script>
 </body>

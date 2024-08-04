@@ -22,22 +22,8 @@
             event.preventDefault();
             const username = event.target.username.value;
             localStorage.setItem('username', username); // Store username in localStorage
-            fetch('http://localhost:8080/start-game', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams({ username }),
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                window.location.href = 'gamepage.html'; // Redirect to gamepage.html
-            })
-            .catch(error => console.error('There has been a problem with your fetch operation:', error));
+            window.location.href = 'gamepage.html'; // Redirect to gamepage.html
         });
     </script>
 </body>
 </html>
-
