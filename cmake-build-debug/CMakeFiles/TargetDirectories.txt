@@ -1,3 +1,0 @@
-C:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters/cmake-build-debug/CMakeFiles/KeyStroke_Crafters.dir
-C:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters/cmake-build-debug/CMakeFiles/rebuild_cache.dir
