@@ -8,7 +8,6 @@
 
 using json = nlohmann::json;
 using namespace std;
-
 int main() {
     TypingGame game;
     mutex gameMutex; // Mutex for thread safety
@@ -26,7 +25,7 @@ int main() {
             lock_guard<mutex> guard(gameMutex);
             game.addPlayer(username, defaultTypingSpeed, defaultAccuracy);
         }
-        res.set_redirect("Keystroke-Crafters/gamepage.html");
+        res.set_redirect("/Keystroke-Crafters/gamepage.html");
     });
 
     svr.Post("/start-typing", [&](const httplib::Request& req, httplib::Response& res) {
@@ -38,8 +37,9 @@ int main() {
     svr.Post("/submit-word", [&](const httplib::Request& req, httplib::Response& res) {
         auto body = json::parse(req.body);
         string typedWord = body["typedWord"];
+        string currentWord = body["currentWord"];
 
-        bool isCorrect = game.checkWord(typedWord, game.getNextWord());
+        bool isCorrect = game.checkWord(typedWord, currentWord);
         json j;
         if (isCorrect) {
             j["nextWord"] = game.getNextWord();
@@ -48,7 +48,7 @@ int main() {
         res.set_content(j.dump(), "application/json");
     });
 
-    // Serve static files (like the game page)
+    // Serve static files
     svr.set_base_dir(".");
 
     cout << "Server started at http://localhost:8080" << endl;
