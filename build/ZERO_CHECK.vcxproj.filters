@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Jess\OneDrive\Documents\GitHub\KeyStroke Crafters\build\CMakeFiles\af8cfe4f47d9f2b203c2879e8581d8dc\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{7F323A9E-A608-39AF-AC1E-216A2827C153}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

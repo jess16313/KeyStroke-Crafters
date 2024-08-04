@@ -1,0 +1,3 @@
+C:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters/cmake-build-release/CMakeFiles/KeyStroke_Crafters.dir
+C:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters/cmake-build-release/CMakeFiles/edit_cache.dir
+C:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters/cmake-build-release/CMakeFiles/rebuild_cache.dir

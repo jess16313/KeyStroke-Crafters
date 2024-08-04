@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="KeyStroke_Crafters" targetName="KeyStroke_Crafters" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" GENERATION_DIR="cmake-build-debug" CONFIG_NAME="Debug" GENERATION_OPTIONS="$CMakeProjectDir$" />
+      <configuration PROFILE_NAME="Release" ENABLED="true" CONFIG_NAME="Release" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d9c9c480-56d7-4884-bc32-c5850d1f460a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/desktop.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/.idea/KeyStroke Crafters.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/BST.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/HashTable.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/RankPlayer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/TopTypists.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/.cmake/api/v1/query/cache-v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/.cmake/api/v1/reply/cache-v2-e6177dd92389ed542556.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-a9f1aad6fb8e16ee29ca.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-aecca989d6d2689fde65.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/.cmake/api/v1/reply/index-2024-08-04T01-06-48-0719.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/.cmake/api/v1/reply/target-KeyStroke_Crafters-Debug-9754eec787f3ef1d6f27.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-ab4823cf4670d208873c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeFiles/3.28.1/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeFiles/3.28.1/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeFiles/3.28.1/CMakeRCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeFiles/3.28.1/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdC/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdCXX/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/build.ninja" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/corepack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/corepack.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/google-books-common-words.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/httplib.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/imgs/Box Outline.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/imgs/Keystroke Crafters Title.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/install_tools.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/json.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/node.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/nodevars.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/npm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/npm.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/npx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/npx.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/public/KCrafters.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/public/gamepage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/KeyStroke Crafters.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BST.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HashTable.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCrafters.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RankPlayer.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TopTypists.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-aecca989d6d2689fde65.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-08-04T01-06-48-0719.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-KeyStroke_Crafters-Debug-9754eec787f3ef1d6f27.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdC/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdCXX/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamepage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google-books-common-words.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httplib.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/Box Outline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgs/Keystroke Crafters Title.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/json.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2024" />
+    <option name="minorVersion" value="1.2" />
+    <option name="productBranch" value="Classic" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2kAk2l83la0Bvs0RIQpqbsu4jPx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "CMake Application.KeyStroke_Crafters.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters/CMakeLists.txt",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CMakeSettings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KeyStroke_Crafters" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9c9c480-56d7-4884-bc32-c5850d1f460a" name="Changes" comment="" />
+      <created>1722733563700</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1722733563700</updated>
+      <workItem from="1722733564846" duration="5080000" />
+      <workItem from="1722742449713" duration="1000" />
+      <workItem from="1722746390267" duration="600000" />
+      <workItem from="1722747004421" duration="914000" />
+      <workItem from="1722750139056" duration="257000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

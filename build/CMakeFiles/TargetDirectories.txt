@@ -1,0 +1,3 @@
+C:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters/build/CMakeFiles/KeyStroke_Crafters.dir
+C:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters/build/CMakeFiles/ZERO_CHECK.dir

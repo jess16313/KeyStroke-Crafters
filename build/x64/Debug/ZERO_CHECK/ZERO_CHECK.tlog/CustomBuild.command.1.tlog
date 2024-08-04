@@ -1,0 +1,10 @@
+^C:\USERS\JESS\ONEDRIVE\DOCUMENTS\GITHUB\KEYSTROKE CRAFTERS\BUILD\CMAKEFILES\AF8CFE4F47D9F2B203C2879E8581D8DC\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters" "-BC:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters/build/KeyStroke_Crafters.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

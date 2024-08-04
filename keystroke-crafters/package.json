@@ -1,0 +1,19 @@
+{
+  "name": "keystroke-crafters",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "corepack": "^0.28.2",
+    "express": "^4.19.2",
+    "keystroke-crafters": "file:",
+    "npm": "^10.8.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

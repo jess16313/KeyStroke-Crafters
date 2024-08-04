@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Jess\OneDrive\Documents\GitHub\KeyStroke Crafters\keystroke-crafters\HashTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jess\OneDrive\Documents\GitHub\KeyStroke Crafters\keystroke-crafters\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jess\OneDrive\Documents\GitHub\KeyStroke Crafters\keystroke-crafters\TypingGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jess\OneDrive\Documents\GitHub\KeyStroke Crafters\keystroke-crafters\BST.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Jess\OneDrive\Documents\GitHub\KeyStroke Crafters\keystroke-crafters\httplib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Jess\OneDrive\Documents\GitHub\KeyStroke Crafters\keystroke-crafters\json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Jess\OneDrive\Documents\GitHub\KeyStroke Crafters\keystroke-crafters\TypingGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Jess\OneDrive\Documents\GitHub\KeyStroke Crafters\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{CD93A777-46FA-39BB-9552-2626D33F8322}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C48B9291-6D13-39B2-AC05-3AA82F226052}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
