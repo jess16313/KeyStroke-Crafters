@@ -3,50 +3,123 @@
 #include <string>
 #include <algorithm>
 #include <map>
+#include <queue>
+#include <chrono>
+#include "HashTable.cpp"
 using namespace std;
 
 // Data Structure Definitions
 struct Player {
-    int id;
-    double typingSpeed; // Words per Minute
-    double accuracy; // Percentage
+        string name;
+        double typingSpeed; // Words per Minute
+        double accuracy; // Percentage
 };
 
 // TypingGame Class Definition
 class TypingGame {
 private:
     vector<Player> players; // Player data storage
-    map<int, string> words; // Words dataset
+    queue<string> words; // Words pulled from data structure
+    HashTable hash;
+    chrono::steady_clock::time_point startTime;
+    bool timerStarted;
+    int errorCount;
 
 public:
     TypingGame();
-    void addPlayer(int id, double typingSpeed, double accuracy);
+    void addPlayer(string& name, double typingSpeed, double accuracy);
+    void startGame();
+    bool checkWord(const string& typedword);
     void rankPlayersSpeed(); // Sort players based on speed (merge sort)
     void rankPlayersAccuracy(); // Sort players based on accuracy (heap sort)
-
     void mergeSortPlayers(int left, int right);
     void merge(int left, int mid, int right);
-
     void heapify(int n, int i);
     void heapSort();
+    void startTimer();
+    void stopTimer();
+    double getTime();
+    int getErrorCount();
+    vector<string> getQueue();
+    string getNextWord();
+    //return hash.getElement()
+    //string nextWord(bst obj)
+    //reset function
 };
-
 // Constructor
-TypingGame::TypingGame() = default;
+TypingGame::TypingGame()  : errorCount(0), timerStarted(false){};
 
 // Add a new player
-void TypingGame::addPlayer(int id, double typingSpeed, double accuracy) {
-    Player newPlayer = { id, typingSpeed, accuracy };
+void TypingGame::addPlayer(string& name, double typingSpeed, double accuracy) {
+    Player newPlayer = { name, typingSpeed, accuracy };
     players.push_back(newPlayer);
 }
+//Start the game
+void TypingGame::startGame(){
+    errorCount = 0;
+    timerStarted = false;
+}
+//Start the timer
+void TypingGame::startTimer(){
+    startTime = chrono::steady_clock::now();
+    timerStarted = true;
+}
+//Stop the timer
+void TypingGame::stopTimer(){
+    timerStarted = false;
+}
+//Get the time it took for the player to make three mistakes
+double TypingGame::getTime(){
+    if (timerStarted){
+        chrono::duration<double> elapsed = chrono::steady_clock::now() - startTime;
+        return elapsed.count();
+    }
+    return 0;
+}
+//Getting the error count
+int TypingGame::getErrorCount(){
+    return errorCount;
+}
 
+//Check if the word was correctly typed
+bool TypingGame::checkWord(const string& typedword){
+    if (!timerStarted){
+        startTimer();
+    }
+
+    if (typedword == words.front()){
+        words.pop();
+        return true;
+    } else{
+        errorCount++;
+        if (errorCount >= 3){
+            stopTimer();
+        }
+        return false;
+    }
+}
+//getnextword function
+string TypingGame::getNextWord(){
+    return words.front();
+}
+//getindexcount funciton
+vector<string> TypingGame::getQueue(){
+    vector<string> wordQueue;
+    queue<string> temp = words;
+
+    while (!temp.empty()){
+        wordQueue.push_back(temp.front());
+        temp.pop();
+    }
+    return wordQueue;
+}
 // Sort players based on performance
 void TypingGame::rankPlayersSpeed() {
     mergeSortPlayers(0, players.size() - 1);
 
     cout << "Ranked Players (by typing speed):\n";
     for (const auto& player : players) {
-        cout << "Player ID: " << player.id << ", Typing Speed: " << player.typingSpeed << " WPM\n";
+        cout << "Player ID: " << player.name << ", Typing Speed: " << player.typingSpeed << " WPM\n";
     }
 }
 
@@ -111,7 +184,7 @@ void TypingGame::rankPlayersAccuracy() {
     // Print the ranked players based on accuracy
     cout << "Ranked Players (by accuracy):\n";
     for (const auto& player : players) {
-        cout << "Player ID: " << player.id << ", Accuracy: " << player.accuracy << "%\n";
+        cout << "Player ID: " << player.name << ", Accuracy: " << player.accuracy << "%\n";
     }
 }
 
