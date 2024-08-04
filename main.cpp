@@ -245,6 +245,7 @@ int main() {
             game.startGame(); // Start game when fetching the first word
         }
         json response = {{"words", wordQueue}};
+        cout << "Sending words: " << response.dump() << endl;
         res.set_content(response.dump(), "application/json");
     });
 
@@ -271,6 +272,7 @@ int main() {
             {"errorCount", errorCount},
             {"elapsedTime", elapsedTime}
         };
+         cout << "Response: " << response.dump() << endl;
         res.set_content(response.dump(), "application/json");
     });
 
