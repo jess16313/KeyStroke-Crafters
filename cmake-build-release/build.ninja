@@ -63,8 +63,8 @@ build CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/main.cpp.obj: CXX_COM
   OBJECT_DIR = CMakeFiles\KeyStroke_Crafters.dir
   OBJECT_FILE_DIR = CMakeFiles\KeyStroke_Crafters.dir\keystroke-crafters
 
-build CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/RankPlayer.cpp.obj: CXX_COMPILER__KeyStroke_Crafters_unscanned_Release C$:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke$ Crafters/keystroke-crafters/RankPlayer.cpp || cmake_object_order_depends_target_KeyStroke_Crafters
-  DEP_FILE = CMakeFiles\KeyStroke_Crafters.dir\keystroke-crafters\RankPlayer.cpp.obj.d
+build CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/TypingGame.cpp.obj: CXX_COMPILER__KeyStroke_Crafters_unscanned_Release C$:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke$ Crafters/keystroke-crafters/TypingGame.cpp || cmake_object_order_depends_target_KeyStroke_Crafters
+  DEP_FILE = CMakeFiles\KeyStroke_Crafters.dir\keystroke-crafters\TypingGame.cpp.obj.d
   FLAGS = -O3 -DNDEBUG -std=gnu++1z -fdiagnostics-color=always
   INCLUDES = -I"C:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters"
   OBJECT_DIR = CMakeFiles\KeyStroke_Crafters.dir
@@ -85,7 +85,7 @@ build CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/BST.cpp.obj: CXX_COMP
 #############################################
 # Link the executable KeyStroke_Crafters.exe
 
-build KeyStroke_Crafters.exe: CXX_EXECUTABLE_LINKER__KeyStroke_Crafters_Release CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/HashTable.cpp.obj CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/main.cpp.obj CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/RankPlayer.cpp.obj CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/BST.cpp.obj
+build KeyStroke_Crafters.exe: CXX_EXECUTABLE_LINKER__KeyStroke_Crafters_Release CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/HashTable.cpp.obj CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/main.cpp.obj CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/TypingGame.cpp.obj CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/BST.cpp.obj
   FLAGS = -O3 -DNDEBUG
   LINK_LIBRARIES = -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\KeyStroke_Crafters.dir

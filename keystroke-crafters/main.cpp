@@ -1,18 +1,23 @@
 #include <iostream>
-#include <string>
 #include <mutex>
+#include <string>
 #include "httplib.h"
 #include "TypingGame.h"
-#include "json.hpp" // Include the nlohmann/json library
+#include "json.hpp"
 
 using json = nlohmann::json;
 using namespace std;
+
+#define HTML_DIR "./public"
 
 int main() {
     TypingGame game;
     mutex gameMutex; // Mutex for thread safety
 
     httplib::Server svr;
+
+    // Serve static files
+    svr.set_mount_point("/", HTML_DIR);
 
     // Endpoint for handling the form submission and redirecting to the game page
     svr.Post("/start-game", [&](const httplib::Request& req, httplib::Response& res) {
@@ -25,9 +30,8 @@ int main() {
             lock_guard<mutex> guard(gameMutex);
             game.addPlayer(username, defaultTypingSpeed, defaultAccuracy);
         }
-        res.set_redirect("/Keystroke-Crafters/gamepage.html");
+        res.set_redirect("/gamepage.html");
     });
-
 
     svr.Post("/start-typing", [&](const httplib::Request& req, httplib::Response& res) {
         json j;
@@ -48,9 +52,6 @@ int main() {
         j["isCorrect"] = isCorrect;
         res.set_content(j.dump(), "application/json");
     });
-
-    // Serve static files
-    svr.set_mount_point("/", "./");
 
     cout << "Server started at http://localhost:8080" << endl;
     svr.listen("localhost", 8080);

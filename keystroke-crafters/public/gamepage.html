@@ -33,11 +33,12 @@
 
         document.addEventListener('DOMContentLoaded', (event) => {
             const username = localStorage.getItem('username');
-            if (!username) {
-                alert('Username is missing. Please go back and enter your name.');
-                window.location.href = 'index.html';
-                return;
-            }
+
+            // if (!username) {
+            //     alert('Username is missing. Please go back and enter your name.');
+            //     window.location.href = 'index.html';
+            //     return;
+            // }
             startGame();
         });
 
