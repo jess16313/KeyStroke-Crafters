@@ -61,7 +61,7 @@
         }
 
         function startGame() {
-            fetch('/start-typing')
+            fetch('http://localhost:8080/start-typing')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -78,7 +78,7 @@
         function submitTyping(event) {
             event.preventDefault();
             const typedWord = document.getElementById('typing-input').value;
-            fetch('/submit-word', {
+            fetch('http://localhost:8080/submit-word', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

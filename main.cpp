@@ -222,6 +222,12 @@ int main() {
 
     httplib::Server svr;
 
+      svr.set_post_routing_handler([](const httplib::Request &req, httplib::Response &res) {
+        res.set_header("Access-Control-Allow-Origin", "*");
+        res.set_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+        res.set_header("Access-Control-Allow-Headers", "Content-Type");
+    });
+
     // Endpoint for handling the form submission and redirecting to the game page
     svr.Post("/start-game", [&](const httplib::Request& req, httplib::Response& res) {
         auto username = req.get_param_value("username");
@@ -241,9 +247,9 @@ int main() {
         vector<string> wordQueue;
         {
             lock_guard<mutex> guard(gameMutex);
+            game.startGame();
             wordQueue = game.getQueue();
-            game.startGame(); // Start game when fetching the first word
-        }
+            }
         json response = {{"words", wordQueue}};
         cout << "Sending words: " << response.dump() << endl;
         res.set_content(response.dump(), "application/json");
