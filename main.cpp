@@ -26,8 +26,9 @@ int main() {
             lock_guard<mutex> guard(gameMutex);
             game.addPlayer(username, defaultTypingSpeed, defaultAccuracy);
         }
-        res.set_redirect("/gamepage.html");
+        res.set_redirect("/Keystroke-Crafters/gamepage.html");
     });
+
 
     svr.Post("/start-typing", [&](const httplib::Request& req, httplib::Response& res) {
         json j;
