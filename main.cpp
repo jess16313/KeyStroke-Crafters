@@ -8,6 +8,7 @@
 
 using json = nlohmann::json;
 using namespace std;
+
 int main() {
     TypingGame game;
     mutex gameMutex; // Mutex for thread safety
@@ -25,7 +26,7 @@ int main() {
             lock_guard<mutex> guard(gameMutex);
             game.addPlayer(username, defaultTypingSpeed, defaultAccuracy);
         }
-        res.set_redirect("/Keystroke-Crafters/gamepage.html");
+        res.set_redirect("/gamepage.html");
     });
 
     svr.Post("/start-typing", [&](const httplib::Request& req, httplib::Response& res) {
@@ -49,7 +50,7 @@ int main() {
     });
 
     // Serve static files
-    svr.set_base_dir(".");
+    svr.set_mount_point("/", "./");
 
     cout << "Server started at http://localhost:8080" << endl;
     svr.listen("localhost", 8080);
