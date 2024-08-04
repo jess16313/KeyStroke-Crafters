@@ -1,26 +1,9 @@
-# ninja log v6
-37	722	7444811693923445	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/BST.cpp.obj	665d7d2e60a8caf0
-25	8161	7444902492899179	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/main.cpp.obj	a6da09e6ba5596fb
-19	5518	7444902492829342	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/HashTable.cpp.obj	9115500c83ef93e7
-8161	30933	7444902574260686	KeyStroke_Crafters.exe	f4d73d7a8aa55040
-28	5102	7444830652541096	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/RankPlayer.cpp.obj	cdf51aa39fe96787
-3	586	7444902814363345	build.ninja	fd5c92fd668944e2
-32	5706	7444902492959340	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/TypingGame.cpp.obj	12c229b6560fcd3f
-4	7140	7444908481709750	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/main.cpp.obj	a6da09e6ba5596fb
-7141	29930	7444908553081600	KeyStroke_Crafters.exe	f4d73d7a8aa55040
-43	10360	7444911445321197	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/main.cpp.obj	a6da09e6ba5596fb
-10361	33422	7444911548504259	KeyStroke_Crafters.exe	f4d73d7a8aa55040
-9	7333	7444913594139104	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/main.cpp.obj	a6da09e6ba5596fb
-7334	30703	7444913667389023	KeyStroke_Crafters.exe	f4d73d7a8aa55040
-3	7362	7444915162057210	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/main.cpp.obj	a6da09e6ba5596fb
-7363	30161	7444915235655864	KeyStroke_Crafters.exe	f4d73d7a8aa55040
-4	7049	7444916479146130	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/main.cpp.obj	a6da09e6ba5596fb
-7050	29995	7444916549605887	KeyStroke_Crafters.exe	f4d73d7a8aa55040
-4	7062	7444918193003679	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/main.cpp.obj	a6da09e6ba5596fb
-7063	29851	7444918263587421	KeyStroke_Crafters.exe	f4d73d7a8aa55040
-4	7085	7444919595866358	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/main.cpp.obj	a6da09e6ba5596fb
-7086	30373	7444919666675691	KeyStroke_Crafters.exe	f4d73d7a8aa55040
-4	7980	7444921058909595	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/main.cpp.obj	a6da09e6ba5596fb
-7980	31910	7444921138676422	KeyStroke_Crafters.exe	f4d73d7a8aa55040
-4	7078	7444923044227225	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/main.cpp.obj	a6da09e6ba5596fb
+# ninja log v5
+1	11293	1722794487986485000	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/main.cpp.o	657fd4409039bb8d
+2	1582	1722794478281508807	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/BST.cpp.o	23c8c7a39e8fadce
 7079	30049	7444923114970208	KeyStroke_Crafters.exe	f4d73d7a8aa55040
+2	6039	1722794482737008537	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/TypingGame.cpp.o	eca1d566eec5856b
+0	5534	1722794482235617250	CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/HashTable.cpp.o	c7aef9a9180c800f
+3	586	1722796813433698473	build.ninja	fd5c92fd668944e2
+6	92	1722796813433698473	build.ninja	da19cde066938251
+4	292	1722796813730863530	KeyStroke_Crafters	950fee488317bd5d
