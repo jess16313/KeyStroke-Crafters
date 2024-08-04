@@ -27,6 +27,8 @@
         let timerInterval;
         let startTime;
         let timerStarted = false;
+        let wordsQueue = [];
+        let errorCount = 0;
 
         document.addEventListener('DOMContentLoaded', (event) => {
             const username = localStorage.getItem('username');
@@ -61,7 +63,9 @@
         }
 
         function startGame() {
-            fetch('http://localhost:8080/start-typing')
+            fetch('/start-typing', {
+                method: 'POST'
+            })
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -69,8 +73,9 @@
                     return response.json();
                 })
                 .then(data => {
-                    console.log('Received words:', data.words); // Log received words
-                    displayWords(data.words);
+                    console.log('Received words:', data.words);
+                    wordsQueue = data.words;
+                    displayWords();
                 })
                 .catch(error => console.error('There has been a problem with your fetch operation:', error));
         }
@@ -78,43 +83,38 @@
         function submitTyping(event) {
             event.preventDefault();
             const typedWord = document.getElementById('typing-input').value;
-            fetch('http://localhost:8080/submit-word', {
+            const currentWord = wordsQueue[0];
+
+            fetch('/submit-word', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ typedWord }),
+                body: JSON.stringify({ typedWord, currentWord }),
             })
             .then(response => response.json())
             .then(data => {
-                if (data.errorCount >= 3) {
-                    stopTimer();
-                    document.getElementById('typing-input').disabled = true;
-                    alert('Game over! You made three errors.');
+                if (data.isCorrect) {
+                    wordsQueue.shift();
+                    wordsQueue.push(data.nextWord);
                 } else {
-                    displayWords(data.words);
-                    document.getElementById('error-display').textContent = `Errors: ${data.errorCount}`;
-                    document.getElementById('typing-input').value = '';
+                    errorCount++;
+                    document.getElementById('error-display').textContent = `Errors: ${errorCount}`;
                 }
-                document.getElementById('timer').textContent = formatTime(data.elapsedTime);
+                displayWords();
+                document.getElementById('typing-input').value = '';
             })
             .catch(error => console.error('There has been a problem with your fetch operation:', error));
         }
 
-        function displayWords(words) {
+        function displayWords() {
             const wordDisplay = document.getElementById('word-display');
             wordDisplay.innerHTML = ''; 
-            words.forEach(word => {
+            wordsQueue.forEach(word => {
                 const wordElement = document.createElement('span');
                 wordElement.textContent = word + ' ';
                 wordDisplay.appendChild(wordElement);
             });
-        }
-
-        function formatTime(seconds) {
-            const minutes = Math.floor(seconds / 60);
-            const secs = Math.floor(seconds % 60);
-            return `${minutes < 10 ? '0' : ''}${minutes}:${secs < 10 ? '0' : ''}${secs}`;
         }
     </script>
 </body>

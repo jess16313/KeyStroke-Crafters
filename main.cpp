@@ -222,12 +222,6 @@ int main() {
 
     httplib::Server svr;
 
-      svr.set_post_routing_handler([](const httplib::Request &req, httplib::Response &res) {
-        res.set_header("Access-Control-Allow-Origin", "*");
-        res.set_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-        res.set_header("Access-Control-Allow-Headers", "Content-Type");
-    });
-
     // Endpoint for handling the form submission and redirecting to the game page
     svr.Post("/start-game", [&](const httplib::Request& req, httplib::Response& res) {
         auto username = req.get_param_value("username");
@@ -242,46 +236,26 @@ int main() {
         res.set_redirect("/Keystroke-Crafters/gamepage.html");
     });
 
-    // Endpoint for starting the game and fetching the first word
-    svr.Get("/start-typing", [&](const httplib::Request& req, httplib::Response& res) {
-        vector<string> wordQueue;
-        {
-            lock_guard<mutex> guard(gameMutex);
-            game.startGame();
-            wordQueue = game.getQueue();
-            }
-        json response = {{"words", wordQueue}};
-        cout << "Sending words: " << response.dump() << endl;
-        res.set_content(response.dump(), "application/json");
+  svr.Post("/start-typing", [](const Request& req, Response& res) {
+        auto initialWords = getInitialWords();
+        json j;
+        j["words"] = initialWords;
+        res.set_content(j.dump(), "application/json");
     });
 
-    // Endpoint for submitting a typed word
-    svr.Post("/submit-word", [&](const httplib::Request& req, httplib::Response& res) {
-        auto j = json::parse(req.body);
-        string typedWord = j["typedWord"];
+    svr.Post("/submit-word", [](const Request& req, Response& res) {
+        auto typedWord = req.get_param_value("typedWord");
+        auto currentWord = req.get_param_value("currentWord");
 
-        bool correct;
-        int errorCount;
-        double elapsedTime;
-        vector<string> wordQueue;
-        {
-            lock_guard<mutex> guard(gameMutex);
-            correct = game.checkWord(typedWord);
-            errorCount = game.getErrorCount();
-            elapsedTime = game.getElapsedTime();
-            wordQueue = game.getWordQueue();
+        bool isCorrect = checkword(typedWord, currentWord);
+        json j;
+        if (isCorrect) {
+            j["nextWord"] = getNextWord();
         }
-
-        json response = {
-            {"correct", correct},
-            {"words", wordQueue},
-            {"errorCount", errorCount},
-            {"elapsedTime", elapsedTime}
-        };
-         cout << "Response: " << response.dump() << endl;
-        res.set_content(response.dump(), "application/json");
+        j["isCorrect"] = isCorrect;
+        res.set_content(j.dump(), "application/json");
     });
-
+}
     // Serve static files (like the game page)
     svr.set_base_dir(".");
 
