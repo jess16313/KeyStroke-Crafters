@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <chrono>
 #include <queue>
 #include "HashTable.cpp"
 #include "BST.cpp"
@@ -34,6 +35,9 @@ private:
     chrono::steady_clock::time_point startTime;
     bool timerStarted;
     int errorCount;
+    int words_seen;
+    double wordsperminute;
+    double wordsaccuracy;
 
 public:
     TypingGame(string option);
@@ -53,8 +57,9 @@ public:
     queue<string> getQueue();
     void printQueue();
     void getNextWord();
-    //return hash.getElement()
-    //string nextWord(bst obj)
+    void calculator();
+    double getwpm();
+    double getaccuracy();
     //reset function
 };
 
