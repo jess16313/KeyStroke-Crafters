@@ -12,7 +12,8 @@ add_executable(KeyStroke_Crafters
         keystroke-crafters/main.cpp
         keystroke-crafters/TypingGame.cpp
         keystroke-crafters/BST.cpp
-        keystroke-crafters/TypingGame.h)
+        keystroke-crafters/TypingGame.h
+        keystroke-crafters/main.cpp)
 
 if (WIN32)
     message(STATUS "Configuring for Windows")
