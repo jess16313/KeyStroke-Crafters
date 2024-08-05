@@ -14,7 +14,7 @@ int main() {
     if(option == "3") {
         cout << "Thank you for playing!" << endl;
         return 0;
-    } else if(option != "1" || option != "2"){
+    } else if(option != "1" && option != "2"){
         cout << "Invalid selection, exiting now." << endl;
         return 0;
     }

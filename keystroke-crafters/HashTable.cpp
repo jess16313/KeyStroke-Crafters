@@ -92,8 +92,9 @@ class HashTable{
   }
   void initializeHash(){ //currently only adds first 10 words of database
         ifstream file("keystroke-crafters/google-books-common-words.txt");
-        if(!file){
-            cout << "BOOO" << endl;
+        if (!file) {
+            cout << "Failed to open file" << endl;
+            return;
         }
         string line, word;
         getline(file, line);

@@ -14,6 +14,9 @@ using namespace std;
 // Constructor
 TypingGame::TypingGame(string option){
     timerStarted = false;
+    wordsaccuracy = 0.0;
+    wordsperminute = 0.0;
+    words_seen = 0;
     errorCount = 0;
     this->option = option;
     if(this->option == "1"){
@@ -52,6 +55,7 @@ void TypingGame::stopTimer(){
 //Get the time it took for the player to make three mistakes
 double TypingGame::getTime(){
     if (timerStarted){
+        stopTimer();
         chrono::duration<double> elapsed = chrono::steady_clock::now() - startTime;
         return elapsed.count();
     }
@@ -70,10 +74,9 @@ void TypingGame::checkWord(string& typedword){
 
     if (typedword != words.front()){
         errorCount++;
-        if (errorCount >= 3){
-            stopTimer();
-        }
+        cout << "error count:" << errorCount << endl;
     }
+    words_seen++;
     words.pop();
 }
 //getnextword function
@@ -85,7 +88,7 @@ void TypingGame::getNextWord(){
     }
 
 }
-////getindexcount funciton
+//getindexcount funciton
 queue<string> TypingGame::getQueue(){
     return words;
 }
@@ -96,6 +99,21 @@ void TypingGame::printQueue(){
         cout << temp.front() << " ";
         temp.pop();
     }
+}
+
+void TypingGame::calculator(){
+    double minutes = getTime() / 60;
+    wordsperminute = words_seen / minutes;
+    wordsaccuracy = (words_seen-3.0)/words_seen;
+
+}
+
+double TypingGame::getwpm() {
+    return wordsperminute;
+}
+
+double TypingGame::getaccuracy() {
+    return wordsaccuracy;
 }
 
 // Sort players based on performance

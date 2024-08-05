@@ -89,17 +89,19 @@ public:
 
     // Initializes the BST with the first 10 words from the data set
     void initializeBST() {
-        ifstream file("google-books-common-words.txt");
+        ifstream file("keystroke-crafters/google-books-common-words.txt");
         if (!file) {
             cout << "Failed to open file" << endl;
             return;
         }
-        string word;
-        getline(file, word);
-        for (int i = 0; i < 10; i++) {
-            word = word.substr(0, word.find('/t'));
-            addElement(word);
-            getline(file, word);
+        string word, line;
+        getline(file, line);
+        for (int i = 0; i < 90000; i++) {
+            word = line.substr(0, line.find("\t"));
+            if(word.size() > 4){
+                addElement(word);
+            }
+            getline(file, line);
         }
     }
 
