@@ -15,6 +15,9 @@ using namespace std;
 TypingGame::TypingGame(){
     timerStarted = false;
     errorCount = 0;
+    wordsaccuracy = 0.0;
+    wordsperminute = 0.0;
+    words_seen = 0;
     hash.initializeHash();
     for(int i = 0; i < 5; i++){
         words.push(hash.getElement());
@@ -43,6 +46,7 @@ void TypingGame::stopTimer(){
 //Get the time it took for the player to make three mistakes
 double TypingGame::getTime(){
     if (timerStarted){
+        stopTimer();
         chrono::duration<double> elapsed = chrono::steady_clock::now() - startTime;
         return elapsed.count();
     }
@@ -61,10 +65,9 @@ void TypingGame::checkWord(string& typedword){
 
     if (typedword != words.front()){
         errorCount++;
-        if (errorCount >= 3){
-            stopTimer();
-        }
+        cout << "error count:" << errorCount << endl;
     }
+    words_seen ++;
     words.pop();
 }
 //getnextword function
@@ -72,10 +75,11 @@ void TypingGame::getNextWord(){
     string a = hash.getElement();
     words.push(a);
 }
-////getindexcount funciton
+//getindexcount funciton
 queue<string> TypingGame::getQueue(){
     return words;
 }
+
 void TypingGame::printQueue(){
     cout << "The words you will be typing are: " << endl;
     queue<string> temp = words;
@@ -85,6 +89,20 @@ void TypingGame::printQueue(){
     }
 }
 
+void TypingGame::calculator(){
+    double minutes = getTime() / 60;
+    wordsperminute = words_seen / minutes;
+    wordsaccuracy = (words_seen-3.0)/words_seen;
+    
+}
+
+double TypingGame::getwpm() {
+    return wordsperminute;
+}
+
+double TypingGame::getaccuracy() {
+    return wordsaccuracy;
+}
 // Sort players based on performance
 //void TypingGame::rankPlayersSpeed() {
 //    mergeSortPlayers(0, players.size() - 1);

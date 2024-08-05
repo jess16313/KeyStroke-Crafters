@@ -15,14 +15,17 @@ int main() {
     TypingGame game;
     cout << "To begin the typing game, please turn your caps lock on." << endl;
     while(game.getErrorCount() < 3){
-        game.printQueue();
         cout << "\nPlease type the first word.\t";
+        game.printQueue();
         string input;
         cin >> input;
         game.checkWord(input);
         game.getNextWord();
     }
 
+    game.calculator();
+
+    cout << "You lost. Get good. You typed " << game.getwpm() << " words per minute and had " << game.getaccuracy() << "% accuracy" << endl;
 
 
     return 0;
