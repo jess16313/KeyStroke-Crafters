@@ -97,7 +97,7 @@ public:
         string word;
         getline(file, word);
         for (int i = 0; i < 10; i++) {
-            word = word.substr(0, word.find(' '));
+            word = word.substr(0, word.find('/t'));
             addElement(word);
             getline(file, word);
         }
