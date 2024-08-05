@@ -15,6 +15,11 @@ struct Player {
     string name;
     double typingSpeed; // Words per Minute
     double accuracy; // Percentage
+    Player(string a){
+        name = a;
+        typingSpeed = 0.0;
+        accuracy = 0.0;
+    }
 };
 
 // TypingGame Class Definition
@@ -31,7 +36,7 @@ public:
     TypingGame();
     void addPlayer(string& name, double typingSpeed, double accuracy);
     void startGame();
-    bool checkWord(const string& typedword);
+    void checkWord(string& typedword);
     void rankPlayersSpeed(); // Sort players based on speed (merge sort)
     void rankPlayersAccuracy(); // Sort players based on accuracy (heap sort)
     void mergeSortPlayers(int left, int right);
@@ -42,8 +47,9 @@ public:
     void stopTimer();
     double getTime();
     int getErrorCount();
-    vector<string> getQueue();
-    string getNextWord();
+    queue<string> getQueue();
+    void printQueue();
+    void getNextWord();
     //return hash.getElement()
     //string nextWord(bst obj)
     //reset function
