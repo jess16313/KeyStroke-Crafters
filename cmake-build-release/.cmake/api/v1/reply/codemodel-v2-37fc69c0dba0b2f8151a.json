@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.26.4"
@@ -19,7 +19,7 @@
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "Release",
 			"projects" : 
 			[
 				{
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "KeyStroke_Crafters::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-KeyStroke_Crafters-Debug-d55876eb51fac2cee749.json",
+					"jsonFile" : "target-KeyStroke_Crafters-Release-8afc1b7fc16c46d1bab5.json",
 					"name" : "KeyStroke_Crafters",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/mirandaanstett/Documents/GitHub/KeyStroke-Crafters/cmake-build-debug",
-		"source" : "/Users/mirandaanstett/Documents/GitHub/KeyStroke-Crafters"
+		"build" : "C:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters/cmake-build-release",
+		"source" : "C:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 5
+		"minor" : 6
 	}
 }

@@ -31,7 +31,7 @@ int main() {
 
     game.calculator();
 
-    cout << "You lost. Get good. You typed " << game.getwpm() << " words per minute and had " << game.getaccuracy() << "% accuracy" << endl;
+    cout << "You lost. You typed " << game.getwpm() << " words per minute and had " << game.getaccuracy() << "% accuracy" << endl;
 
 
     return 0;
