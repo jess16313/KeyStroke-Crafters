@@ -12,13 +12,22 @@ using namespace std;
 // Data Structure Definitions
 
 // Constructor
-TypingGame::TypingGame(){
+TypingGame::TypingGame(string option){
     timerStarted = false;
     errorCount = 0;
-    hash.initializeHash();
-    for(int i = 0; i < 5; i++){
-        words.push(hash.getElement());
+    this->option = option;
+    if(this->option == "1"){
+        hash.initializeHash();
+        for(int i = 0; i < 5; i++){
+            words.push(hash.getElement());
+        }
+    } else if(this->option == "2"){
+        bst.initializeBST();
+        for(int i = 0; i < 5; i++){
+            words.push(bst.getElement());
+        }
     }
+
 };
 
 // Add a new player
@@ -69,8 +78,12 @@ void TypingGame::checkWord(string& typedword){
 }
 //getnextword function
 void TypingGame::getNextWord(){
-    string a = hash.getElement();
-    words.push(a);
+    if(option == "1"){
+        words.push(hash.getElement());
+    } else if(option == "2"){
+        words.push(bst.getElement());
+    }
+
 }
 ////getindexcount funciton
 queue<string> TypingGame::getQueue(){

@@ -11,8 +11,14 @@ int main() {
     cin >> name;
     cout << "Please select an option: \n\t1) Hash Table\n\t2) BST\n\t3) Exit" << endl;
     cin >> option;
-    //add functionality to select which option they want
-    TypingGame game;
+    if(option == "3") {
+        cout << "Thank you for playing!" << endl;
+        return 0;
+    } else if(option != "1" || option != "2"){
+        cout << "Invalid selection, exiting now." << endl;
+        return 0;
+    }
+    TypingGame game(option);
     cout << "To begin the typing game, please turn your caps lock on." << endl;
     while(game.getErrorCount() < 3){
         game.printQueue();

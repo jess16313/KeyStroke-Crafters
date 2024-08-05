@@ -7,6 +7,7 @@
 #include <string>
 #include <queue>
 #include "HashTable.cpp"
+#include "BST.cpp"
 #ifndef KEYSTROKE_CRAFTERS_RANKPLAYER_H
 #define KEYSTROKE_CRAFTERS_RANKPLAYER_H
 using namespace std;
@@ -25,15 +26,17 @@ struct Player {
 // TypingGame Class Definition
 class TypingGame    {
 private:
+    string option;
     vector<Player> players; // Player data storage
     queue<string> words; // Words pulled from data structure
     HashTable hash;
+    BST bst;
     chrono::steady_clock::time_point startTime;
     bool timerStarted;
     int errorCount;
 
 public:
-    TypingGame();
+    TypingGame(string option);
     void addPlayer(string& name, double typingSpeed, double accuracy);
     void startGame();
     void checkWord(string& typedword);
