@@ -90,6 +90,10 @@ public:
     // Initializes the BST with the first 10 words from the data set
     void initializeBST() {
         ifstream file("google-books-common-words.txt");
+        if (!file) {
+            cout << "Failed to open file" << endl;
+            return;
+        }
         string word;
         getline(file, word);
         for (int i = 0; i < 10; i++) {
