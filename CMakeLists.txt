@@ -10,6 +10,7 @@ add_executable(KeyStroke_Crafters
         keystroke-crafters/TypingGame.cpp
         keystroke-crafters/BST.cpp
         keystroke-crafters/TypingGame.h
+        keystroke-crafters/main.cpp
         keystroke-crafters/main.cpp)
 
 if (WIN32)

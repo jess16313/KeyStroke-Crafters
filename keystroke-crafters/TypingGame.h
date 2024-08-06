@@ -54,8 +54,6 @@ private:
     double getTime();
     void printQueue();
     void getNextWord();
-    double getwpm();
-    double getaccuracy();
     double getalg_runtime();
 public:
     TypingGame();
@@ -63,13 +61,10 @@ public:
     void pushPlayertoFile();
     void new_user();
     void authenticate_user();
-    void addPlayer(string& name, double typingSpeed, double accuracy);
     void checkWord(string& typedword);
     pair<double,double> calculator();
-    void updatePlayerStats(const std::string& username, double typingSpeed, double accuracy);
     void rankPlayersSpeed(); // Sort players based on speed (merge sort)
     void rankPlayersAccuracy(); // Sort players based on accuracy (heap sort)
-    queue<string> getQueue();
     bool start_game();
     void reset();
 
