@@ -21,45 +21,40 @@ TypingGame::TypingGame(){
 };
 //Add a new player
 void TypingGame::new_user() {
-    std::string username, id;
-    bool goodname = false, goodid = false;
-
+    string username, id;
+    bool goodname,goodid = false;
     while (!goodname) {
         cout << "Enter your name: ";
-        cin.ignore();
-        getline(cin, username);
+        cin >> username;
         goodname = true;
-        for (char c : username) {
-            if (!std::isalpha(static_cast<unsigned char>(c)) && c != ' ') {
-                std::cout << "Invalid name entry. Only use letters or spaces. Try again." << std::endl;
+        for (char c: username) {
+            if (!isalpha(c)) {
+                cout << "Invalid name entry. Only use letters. Try again: ";
                 goodname = false;
                 break;
             }
         }
     }
-
     while (!goodid) {
+        bool uniqueid = true;
         cout << "Enter any set of four numbers, that will be your ID: ";
         cin >> id;
-        bool uniqueid = true;
-
-        for (const auto& user : users) {
-            if (user.id == id) {
+        for (const auto& user : users){
+            if (user.name == id){
                 uniqueid = false;
-                break;
             }
         }
-
         if (id.length() != 4 || !std::all_of(id.begin(), id.end(), ::isdigit)) {
-            std::cout << "Invalid ID entry. IDs must be 4 digits long. Try again." << std::endl;
-        } else if (!uniqueid) {
-            std::cout << "ID is not unique. Enter a new ID." << std::endl;
-        } else {
+            cout << "Invalid id entry, try again: ";
+        }
+        else if(!uniqueid){
+            cout << "Id is not unique. Enter a new id: ";
+        }
+        else{
             goodid = true;
         }
     }
-
-    users.push_back(Player(username, id, 0.0, 0.0));
+    users.push_back(Player(username, id, 0.0, 0.0)); // Add new player to players vector
     currplayer = &users.back();
 }
 
@@ -91,13 +86,13 @@ void TypingGame::pushPlayertoFile() {
 }
 
 //Authenticate an old player
-void TypingGame::authenticate_user() {
-    std::string username, id;
-    std::cout << "Enter username: ";
-    std::cin >> username;
-    std::cout << "Enter ID: ";
-    std::cin >> id;
-
+void TypingGame::authenticate_user(){
+    string username, id;
+    Player p;
+    cout << "Enter username: ";
+    cin >> username;
+    cout << "Enter ID: ";
+    cin >> id;
     bool authenticated = false;
     for (auto& user : users) {
         if (user.name == username && user.id == id) {
@@ -143,8 +138,8 @@ bool TypingGame::start_game() {
     bool valid_entry = false;
 
     while (!valid_entry) {
-        std::cout << "Please select an option: \n\t1) Hash Table\n\t2) BST\n\t3) Player Rankings\n\t4) More Information\n\t5) Exit\n";
-        std::cin >> game_option;
+        cout << "Please select an option: \n\t1) Hash Table\n\t2) BST\n\t3) Player Rankings\n\t4) More Information\n\t5) Exit" << endl;
+        cin >> game_option;
         if (game_option == "5") {
             std::cout << "Thank you for playing!" << std::endl;
             currplayer = nullptr;
@@ -164,7 +159,6 @@ bool TypingGame::start_game() {
             std::cout << "To begin the typing game, please turn your caps lock on." << std::endl;
         }
     }
-
     valid_entry = false;
     option = game_option;
     if (option == "1") {
@@ -195,7 +189,6 @@ bool TypingGame::start_game() {
     }
 
     std::pair<double, double> stats = calculator();
-    std::cout << "Thanks for playing, " << currplayer->name << "! \nYou typed " << currplayer->typingSpeed << " words per minute and had " << currplayer->accuracy << "% accuracy.\nThe algorithm runtime was " << alg_runtime << " microseconds." << endl;
     if (currplayer->typingSpeed < stats.first) {
         std::cout << "Congratulations, you have a new highest speed!" << endl;
     }
@@ -204,6 +197,7 @@ bool TypingGame::start_game() {
     }
     currplayer->typingSpeed = stats.first;
     currplayer->accuracy = stats.second;
+    std::cout << "Thanks for playing, " << currplayer->name << "! \nYou typed " << currplayer->typingSpeed << " words per minute and had " << currplayer->accuracy << "% accuracy.\nThe algorithm runtime was " << alg_runtime << " microseconds." << endl;
     pushPlayertoFile(); // Save updated player stats to file
     return true;
 }
@@ -234,7 +228,7 @@ void TypingGame::checkWord(string& typedword){
 
     if (typedword != words.front()){
         errorCount++;
-        cout << "Error count:" << errorCount << endl;
+        cout << "Error count: " << errorCount << endl;
     }
     words_seen++;
     words.pop();
