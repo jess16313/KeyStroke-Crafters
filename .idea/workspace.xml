@@ -22,29 +22,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9c9c480-56d7-4884-bc32-c5850d1f460a" name="Changes" comment="Add functionality for selecting between multiple data structures.">
+      <change afterPath="$PROJECT_DIR$/keystroke-crafters/players.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/players.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-a9f1aad6fb8e16ee29ca.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-491202704e1f0581a31f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-08-05T17-13-54-0085.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-KeyStroke_Crafters-Debug-1bc91698cb37670f4d8b.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/TypingGame.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/TypingGame.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KeyStroke_Crafters.dir/keystroke-crafters/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/KeyStroke_Crafters.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/KeyStroke_Crafters.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/.cmake/api/v1/reply/cmakeFiles-v1-2df18320db1fcb1de1a7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/.cmake/api/v1/reply/codemodel-v2-37fc69c0dba0b2f8151a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/.cmake/api/v1/reply/index-2024-08-05T17-13-48-0788.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/.cmake/api/v1/reply/target-KeyStroke_Crafters-Release-8afc1b7fc16c46d1bab5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/clion-Release-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/clion-Release-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/build.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/keystroke-crafters/TypingGame.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/keystroke-crafters/TypingGame.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/keystroke-crafters/TypingGame.h" beforeDir="false" afterPath="$PROJECT_DIR$/keystroke-crafters/TypingGame.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/keystroke-crafters/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/keystroke-crafters/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keystroke-crafters/node.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keystroke-crafters/node.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keystroke-crafters/nodevars.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keystroke-crafters/npm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keystroke-crafters/npm.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keystroke-crafters/npx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keystroke-crafters/npx.cmd" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +140,7 @@
       <workItem from="1722747004421" duration="914000" />
       <workItem from="1722750139056" duration="9972000" />
       <workItem from="1722820095048" duration="4224000" />
-      <workItem from="1722879312478" duration="13742000" />
+      <workItem from="1722879312478" duration="23192000" />
     </task>
     <task id="LOCAL-00001" summary="Fix CMake Files to work for multiple OS">
       <option name="closed" value="true" />

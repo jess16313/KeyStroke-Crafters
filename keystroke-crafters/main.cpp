@@ -32,7 +32,7 @@ int main() {
     }
     string option2;
     while (game.start_game()) {
-        cout << "Would you like to play again?\n\t1)Yes\n\t2)No\\n\\t3) Player Rankings\\n\\t4) More Information" << endl;
+        cout << "Would you like to play again?\n\t1) Yes\n\t2) No\\n\\t3) Player Rankings\\n\\t4) More Information" << endl;
         cin >> option2;
         if (option2 == "1") {
             game.reset();

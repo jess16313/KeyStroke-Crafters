@@ -24,11 +24,11 @@ struct Player {
         typingSpeed = 0.0;
         accuracy = 0.0;
     }
-    Player(string name, string id, double speed, double accruacy){
+    Player(string name, string id, double speed, double typeaccuracy){
         this->name = name;
         this->id = id;
         this->typingSpeed = speed;
-        this->accuracy = accuracy;
+        this->accuracy = typeaccuracy;
     }
 };
 
@@ -60,6 +60,8 @@ private:
     double getalg_runtime();
 public:
     TypingGame();
+    void loadPlayerfromFile();
+    void pushPlayertoFile();
     void new_user();
     void authenticate_user();
     void addPlayer(string& name, double typingSpeed, double accuracy);

@@ -5,6 +5,7 @@
 #include <map>
 #include <queue>
 #include <chrono>
+#include <fstream>
 #include "TypingGame.h"
 using namespace std;
 
@@ -15,167 +16,195 @@ TypingGame::TypingGame(){
     timerStarted = false;
     words_seen = 0;
     errorCount = 0;
-    option;
-    if(this->option == "1"){
-        hash.initializeHash();
-        for(int i = 0; i < 5; i++){
-            words.push(hash.getElement());
-        }
-    } else if(this->option == "2"){
-        bst.initializeBST();
-        for(int i = 0; i < 5; i++){
-            words.push(bst.getElement());
-        }
-    }
+    loadPlayerfromFile();
 
 };
 //Add a new player
 void TypingGame::new_user() {
-    string username, id;
-    bool goodname,goodid = false;
+    std::string username, id;
+    bool goodname = false, goodid = false;
+
     while (!goodname) {
-        cout << "Enter your name:";
-        cin >> username;
+        cout << "Enter your name: ";
+        cin.ignore();
+        getline(cin, username);
         goodname = true;
-        for (char c: username) {
-            if (!isalpha(c)) {
-                cout << "Invalid name entry. Only use letters. Try again";
+        for (char c : username) {
+            if (!std::isalpha(static_cast<unsigned char>(c)) && c != ' ') {
+                std::cout << "Invalid name entry. Only use letters or spaces. Try again." << std::endl;
                 goodname = false;
                 break;
             }
         }
     }
+
     while (!goodid) {
-        bool uniqueid = true;
-        cout << "Enter any set of four numbers, that will be your ID:";
+        cout << "Enter any set of four numbers, that will be your ID: ";
         cin >> id;
-        for (const auto& user : users){
-            if (user.name == id){
-               uniqueid = false;
+        bool uniqueid = true;
+
+        for (const auto& user : users) {
+            if (user.id == id) {
+                uniqueid = false;
+                break;
             }
         }
+
         if (id.length() != 4 || !std::all_of(id.begin(), id.end(), ::isdigit)) {
-            cout << "Invalid id entry, try again";
-        }
-        else if(!uniqueid){
-            cout << "Id is not unique. Enter a new id";
-        }
-        else{
+            std::cout << "Invalid ID entry. IDs must be 4 digits long. Try again." << std::endl;
+        } else if (!uniqueid) {
+            std::cout << "ID is not unique. Enter a new ID." << std::endl;
+        } else {
             goodid = true;
         }
     }
-    users.push_back(Player(username, id, 0.0, 0.0)); // Add new player to players vector
+
+    users.push_back(Player(username, id, 0.0, 0.0));
     currplayer = &users.back();
 }
 
+void TypingGame::loadPlayerfromFile() {
+    ifstream file("players.txt");
+    if (!file.is_open()){
+        cerr << "You made an oopsie" << endl;
+    }
+    string name, id;
+    double speed, accuracy;
+    while (file>> name>> id >> speed >> accuracy){
+        std::cout << "Reading player: " << name << " " << id << " " << speed << " " << accuracy << endl;
+        users.push_back(Player(name, id, speed, accuracy));
+    }
+    file.close();
+}
+
+void TypingGame::pushPlayertoFile() {
+    ofstream file("players.txt");
+    if (!file.is_open()) {
+        cerr << "error opening this";
+        return;
+    }
+        for (const auto& player: users) {
+            file << player.name << " " << player.id << " " << player.typingSpeed << " " << player.accuracy << "\n";
+        }
+
+        file.close();
+}
+
 //Authenticate an old player
-void TypingGame::authenticate_user(){
-    string username, id;
-    Player p;
-    cout << "Enter username:";
-    cin >> username;
-    cout << "Enter ID:";
-    cin >> id;
+void TypingGame::authenticate_user() {
+    std::string username, id;
+    std::cout << "Enter username: ";
+    std::cin >> username;
+    std::cout << "Enter ID: ";
+    std::cin >> id;
+
     bool authenticated = false;
-    for (auto& user : users){
-        if (user.name == username && user.id == id){
+    for (auto& user : users) {
+        if (user.name == username && user.id == id) {
             authenticated = true;
-            currplayer = &(user);
+            currplayer = &user;
             break;
         }
     }
 
-    if (authenticated){
+    if (authenticated) {
+        std::cout << "Welcome back, " << username << "!" << std::endl;
         return;
-    }
-    else{
-        string answer;
-        while (answer != "1" || answer != "2") {
-            cout << "Have u played before if yes try again if no make an account" << endl;
-
-            cin >> answer;
+    } else {
+        std::string answer;
+        while (true) {
+            std::cout << "Have you played before? If you have, type 1 to try again! If not, type 2 to make an account." << std::endl;
+            std::cin >> answer;
             if (answer == "1") {
-                authenticate_user();
-            }
-            if (answer == "2") {
-                new_user();
+                authenticate_user(); // Re-enter authentication process
+                return;
+            } else if (answer == "2") {
+                new_user(); // Create new user
+                return;
+            } else {
+                std::cout << "Invalid entry. Please try again." << std::endl;
             }
         }
     }
 }
-//// Add a new player
-//void TypingGame::addPlayer(string& name, double typingSpeed, double accuracy) {
-//    Player newPlayer(name);
-//    players.push_back(newPlayer);
-//}
-//Start the game
+
 void TypingGame::reset(){
     timerStarted = false;
     errorCount = 0;
     cout<< "Game has been reset!" << endl;
     start_game();
 }
-bool TypingGame::start_game(){
+
+bool TypingGame::start_game() {
     timerStarted = false;
     words_seen = 0;
     errorCount = 0;
-    string game_option;
+    std::string game_option;
     bool valid_entry = false;
+
     while (!valid_entry) {
-        cout << "Please select an option: \n\t1) Hash Table\n\t2) BST\n\t3) Player Rankings\n\t4) More Information\n\t5)Exit" << endl;
-        cin >> game_option;
+        std::cout << "Please select an option: \n\t1) Hash Table\n\t2) BST\n\t3) Player Rankings\n\t4) More Information\n\t5) Exit\n";
+        std::cin >> game_option;
         if (game_option == "5") {
-            cout << "Thank you for playing!" << endl;
+            std::cout << "Thank you for playing!" << std::endl;
+            currplayer = nullptr;
             return false;
         } else if (game_option == "4") {
-            cout << "Info on Hashtables and BST's" << endl;
-        } else if(game_option == "3") {
-
-        }else if (game_option != "1" && game_option != "2") {
-            cout << "Invalid selection, try again." << endl;
-        }
-        else {
+            std::cout << "Hashtables:\n\tA data structure that stores key and value pairs and allows "
+                         "\ndata to be retrieved quickly. Insert/Search/Delete time complexity is O(n) worst case."
+                         "\nBinary Search Trees:\n\t A hierarchical data structure where each node has two "
+                         "\nsubnodes refered to as leaves. Insert/Search/Delete time complexity is O(n)." << std::endl;
+        } else if (game_option == "3") {
+            rankPlayersSpeed();
+            rankPlayersAccuracy();
+        } else if (game_option != "1" && game_option != "2") {
+            std::cout << "Invalid selection, try again." << std::endl;
+        } else {
             valid_entry = true;
-            cout << "To begin the typing game, please turn your caps lock on." << endl;
+            std::cout << "To begin the typing game, please turn your caps lock on." << std::endl;
         }
     }
+
     valid_entry = false;
     option = game_option;
-    if(option == "1"){
+    if (option == "1") {
+        auto start = std::chrono::high_resolution_clock::now();
         hash.initializeHash();
-        for(int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
             words.push(hash.getElement());
         }
-    } else if(option == "2"){
+        auto end = std::chrono::high_resolution_clock::now();
+        alg_runtime = std::chrono::duration<double, std::micro>(end - start).count();
+    } else if (option == "2") {
+        auto start = std::chrono::high_resolution_clock::now();
         bst.initializeBST();
-        for(int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
             words.push(bst.getElement());
         }
+        auto end = std::chrono::high_resolution_clock::now();
+        alg_runtime = std::chrono::duration<double, std::micro>(end - start).count();
     }
-    while(errorCount < 3){
-        cout << "\nPlease type the first word.\t";
+
+    while (errorCount < 3) {
+        std::cout << "\nPlease type the first word.\t";
         printQueue();
-        string input;
-        cin >> input;
+        std::string input;
+        std::cin >> input;
         checkWord(input);
         getNextWord();
     }
-    pair<double,double> stats;
-    stats = calculator();
-    if (currplayer->typingSpeed < stats.first){
-        cout <<" Congratulations, you have a new highest speed!" << endl;
-        currplayer->typingSpeed = stats.first;
-    }
-    if (currplayer->accuracy < stats.second){
-        cout << "Congratulations, you have a new highest accuracy" << endl;
-        currplayer->accuracy = stats.second;
-    }
-    else{
-        currplayer->typingSpeed = stats.first;
-        currplayer->accuracy = stats.second;
-    }
 
-    cout << "Thanks for playing, " << currplayer->name << "! \nYou typed " << currplayer->typingSpeed << " words per minute and had " << currplayer->accuracy << "% accuracy.\nThe algorithm runtime was " << getalg_runtime() << " microseconds." <<endl;
+    std::pair<double, double> stats = calculator();
+    std::cout << "Thanks for playing, " << currplayer->name << "! \nYou typed " << currplayer->typingSpeed << " words per minute and had " << currplayer->accuracy << "% accuracy.\nThe algorithm runtime was " << alg_runtime << " microseconds." << endl;
+    if (currplayer->typingSpeed < stats.first) {
+        std::cout << "Congratulations, you have a new highest speed!" << endl;
+    }
+    if (currplayer->accuracy < stats.second) {
+        std::cout << "Congratulations, you have a new highest accuracy" << endl;
+    }
+    currplayer->typingSpeed = stats.first;
+    currplayer->accuracy = stats.second;
+    pushPlayertoFile(); // Save updated player stats to file
     return true;
 }
 //Start the timer
@@ -205,24 +234,18 @@ void TypingGame::checkWord(string& typedword){
 
     if (typedword != words.front()){
         errorCount++;
-        cout << "error count:" << errorCount << endl;
+        cout << "Error count:" << errorCount << endl;
     }
     words_seen++;
     words.pop();
 }
 //getnextword function
 void TypingGame::getNextWord(){
-    if(option == "1"){
-        auto start = std::chrono::high_resolution_clock::now();
+    if(option == "1") {
         words.push(hash.getElement());
-        auto end = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double, std:: micro> alg_runtime = end - start;
-    } else if(option == "2"){
-        auto start = std::chrono::high_resolution_clock::now();
+    }else if(option == "2"){
         words.push(bst.getElement());
-        auto end = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double, std:: micro> alg_runtime = end - start;
-    }
+     }
 }
 //getindexcount funciton
 queue<string> TypingGame::getQueue(){
@@ -235,6 +258,7 @@ void TypingGame::printQueue(){
         cout << temp.front() << " ";
         temp.pop();
     }
+    cout << "\n";
 }
 
 pair<double,double> TypingGame::calculator(){
