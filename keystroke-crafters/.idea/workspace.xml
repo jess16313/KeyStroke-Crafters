@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="KeyStroke_Crafters" targetName="KeyStroke_Crafters" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d9c9c480-56d7-4884-bc32-c5850d1f460a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/corepack/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/dist/corepack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/dist/lib/corepack.cjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/dist/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/dist/npx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/dist/pnpm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/dist/pnpx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/dist/yarn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/dist/yarnpkg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/corepack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/corepack.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/corepack.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/corepack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/corepack.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/corepack.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/npm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/npm.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/npm.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/npx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/npx.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/npx.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/pnpm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/pnpm.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/pnpm.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/pnpx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/pnpx.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/pnpx.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/yarn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/yarn.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/yarn.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/yarnpkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/yarnpkg.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/nodewin/yarnpkg.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/npm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/npm.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/npm.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/npx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/npx.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/npx.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/pnpm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/pnpm.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/pnpm.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/pnpx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/pnpx.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/pnpx.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/yarn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/yarn.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/yarn.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/yarnpkg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/yarnpkg.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corepack/shims/yarnpkg.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/desktop.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/.npmrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/bin/node-gyp-bin/node-gyp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/bin/node-gyp-bin/node-gyp.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/bin/npm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/bin/npm-cli.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/bin/npm-prefix.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/bin/npm.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/bin/npm.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/bin/npx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/bin/npx-cli.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/bin/npx.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/bin/npx.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-access.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-adduser.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-audit.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-bugs.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-cache.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-ci.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-completion.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-config.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-dedupe.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-deprecate.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-diff.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-dist-tag.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-docs.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-doctor.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-edit.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-exec.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-explain.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-explore.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-find-dupes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-fund.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-help-search.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-help.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-hook.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-init.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-install-ci-test.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-install-test.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-install.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-link.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-login.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-logout.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-ls.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-org.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-outdated.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-owner.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-pack.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-ping.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-pkg.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-prefix.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-profile.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-prune.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-publish.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-query.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-rebuild.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-repo.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-restart.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-root.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-run-script.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-sbom.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-search.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-shrinkwrap.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-star.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-stars.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-start.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-stop.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-team.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-test.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-token.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-uninstall.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-unpublish.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-unstar.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-update.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-version.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-view.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm-whoami.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npm.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/commands/npx.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/configuring-npm/folders.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/configuring-npm/install.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/configuring-npm/npm-shrinkwrap-json.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/configuring-npm/npmrc.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/configuring-npm/package-json.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/configuring-npm/package-lock-json.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/using-npm/config.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/using-npm/dependency-selectors.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/using-npm/developers.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/using-npm/logging.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/using-npm/orgs.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/using-npm/package-spec.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/using-npm/registry.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/using-npm/removal.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/using-npm/scope.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/using-npm/scripts.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/content/using-npm/workspaces.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/lib/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-access.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-adduser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-audit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-bugs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-cache.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-ci.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-completion.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-config.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-dedupe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-deprecate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-diff.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-dist-tag.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-docs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-doctor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-exec.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-explain.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-explore.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-find-dupes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-fund.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-help-search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-help.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-hook.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-init.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-install-ci-test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-install-test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-install.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-link.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-logout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-ls.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-org.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-outdated.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-owner.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-pack.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-ping.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-pkg.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-prefix.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-prune.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-publish.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-query.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-rebuild.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-repo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-restart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-root.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-run-script.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-sbom.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-shrinkwrap.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-star.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-stars.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-start.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-stop.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-team.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-token.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-uninstall.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-unpublish.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-unstar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-update.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-version.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm-whoami.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/commands/npx.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/configuring-npm/folders.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/configuring-npm/install.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/configuring-npm/npm-global.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/configuring-npm/npm-json.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/configuring-npm/npm-shrinkwrap-json.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/configuring-npm/npmrc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/configuring-npm/package-json.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/configuring-npm/package-lock-json.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/using-npm/config.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/using-npm/dependency-selectors.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/using-npm/developers.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/using-npm/logging.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/using-npm/orgs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/using-npm/package-spec.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/using-npm/registry.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/using-npm/removal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/using-npm/scope.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/using-npm/scripts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/docs/output/using-npm/workspaces.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/arborist-cmd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/base-cmd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/cli.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/cli/entry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/cli/exit-handler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/cli/update-notifier.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/cli/validate-engines.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/access.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/adduser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/audit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/bugs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/cache.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/ci.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/completion.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/dedupe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/deprecate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/diff.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/dist-tag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/docs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/doctor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/edit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/exec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/explain.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/explore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/find-dupes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/fund.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/get.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/help-search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/help.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/hook.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/install-ci-test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/install-test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/install.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/link.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/ll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/logout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/ls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/org.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/outdated.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/owner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/pack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/ping.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/pkg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/prefix.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/prune.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/publish.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/query.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/rebuild.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/repo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/restart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/root.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/run-script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/sbom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/set.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/shrinkwrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/star.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/stars.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/start.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/stop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/team.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/token.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/uninstall.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/unpublish.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/unstar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/update.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/version.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/view.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/commands/whoami.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/lifecycle-cmd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/package-url-cmd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/audit-error.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/cmd-list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/completion.fish" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/completion.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/did-you-mean.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/display.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/error-message.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/explain-dep.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/explain-eresolve.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/format-bytes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/format-search-stream.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/format.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/get-identity.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/get-workspaces.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/installed-deep.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/installed-shallow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/is-windows.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/log-file.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/npm-usage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/open-url.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/output-error.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/ping.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/queryable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/read-user-info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/reify-finish.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/reify-output.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/sbom-cyclonedx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/sbom-spdx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/tar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/timers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/update-workspaces.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/validate-lockfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/lib/utils/verify-signatures.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-access.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-adduser.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-audit.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-bugs.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-cache.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-ci.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-completion.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-config.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-dedupe.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-deprecate.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-diff.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-dist-tag.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-docs.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-doctor.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-edit.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-exec.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-explain.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-explore.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-find-dupes.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-fund.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-help-search.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-help.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-hook.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-init.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-install-ci-test.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-install-test.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-install.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-link.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-login.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-logout.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-ls.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-org.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-outdated.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-owner.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-pack.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-ping.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-pkg.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-prefix.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-profile.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-prune.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-publish.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-query.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-rebuild.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-repo.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-restart.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-root.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-run-script.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-sbom.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-search.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-shrinkwrap.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-star.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-stars.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-start.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-stop.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-team.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-test.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-token.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-uninstall.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-unpublish.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-unstar.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-update.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-version.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-view.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm-whoami.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npm.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man1/npx.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man5/folders.5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man5/install.5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man5/npm-global.5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man5/npm-json.5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man5/npm-shrinkwrap-json.5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man5/npmrc.5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man5/package-json.5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man5/package-lock-json.5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man7/config.7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man7/dependency-selectors.7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man7/developers.7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man7/logging.7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man7/orgs.7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man7/package-spec.7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man7/registry.7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man7/removal.7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man7/scope.7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man7/scripts.7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/man/man7/workspaces.7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/npmrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/BST.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/HashTable.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/KCrafters.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/RankPlayer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/TopTypists.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/gamepage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/google-books-common-words.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/httplib.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/json.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BST.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HashTable.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCrafters.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RankPlayer.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TopTypists.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamepage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google-books-common-words.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httplib.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/json.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2024" />
+    <option name="minorVersion" value="1.2" />
+    <option name="productBranch" value="Classic" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2kAk2l83la0Bvs0RIQpqbsu4jPx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Jess/OneDrive/Documents/GitHub/KeyStroke Crafters&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="KeyStroke_Crafters" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="KeyStroke_Crafters" TARGET_NAME="KeyStroke_Crafters" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="KeyStroke_Crafters" RUN_TARGET_NAME="KeyStroke_Crafters">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9c9c480-56d7-4884-bc32-c5850d1f460a" name="Changes" comment="" />
+      <created>1722733563700</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1722733563700</updated>
+      <workItem from="1722733564846" duration="5080000" />
+      <workItem from="1722742449713" duration="1000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
