@@ -6,6 +6,7 @@
 #include <queue>
 #include <chrono>
 #include <fstream>
+#include <iomanip>
 #include "TypingGame.h"
 using namespace std;
 
@@ -66,7 +67,6 @@ void TypingGame::loadPlayerfromFile() {
     string name, id;
     double speed, accuracy;
     while (file>> name>> id >> speed >> accuracy){
-        std::cout << "Reading player: " << name << " " << id << " " << speed << " " << accuracy << endl;
         users.push_back(Player(name, id, speed, accuracy));
     }
     file.close();
@@ -79,7 +79,7 @@ void TypingGame::pushPlayertoFile() {
         return;
     }
         for (const auto& player: users) {
-            file << player.name << " " << player.id << " " << player.typingSpeed << " " << player.accuracy << "\n";
+            file << player.name << " " << player.id << " " << fixed << setprecision(2) << player.typingSpeed << " " << setprecision(2) << player.accuracy << "\n";
         }
 
         file.close();
@@ -148,7 +148,14 @@ bool TypingGame::start_game() {
             std::cout << "Hashtables:\n\tA data structure that stores key and value pairs and allows "
                          "\ndata to be retrieved quickly. Insert/Search/Delete time complexity is O(n) worst case."
                          "\nBinary Search Trees:\n\t A hierarchical data structure where each node has two "
-                         "\nsubnodes refered to as leaves. Insert/Search/Delete time complexity is O(n)." << std::endl;
+                         "\nsubnodes refered to as leaves. Insert/Search/Delete time complexity is O(n)."
+                         "\nMerge Sort:\n\tA sorting algorithm that divides a list into two and continues to divide until "
+                         "\neach sublist only contains one element. Those elements are then compared with each other until the list is sorted."
+                         "\nWorst case time complexity is O(nlogn)."
+                         "\nHeap Sort:\n\tA sorting algorithim that utilizes a binary heap data structure. The value of each "
+                         "\nnode in a binary max-heap is greater than the value of its children. The algorithim takes and then removes the root "
+                         "\n of the heap and replaces it with the next largest number."
+                         "\nWorst case time complexity is O(n log n)."<<endl;
         } else if (game_option == "3") {
             rankPlayersSpeed();
             rankPlayersAccuracy();
@@ -197,7 +204,7 @@ bool TypingGame::start_game() {
     }
     currplayer->typingSpeed = stats.first;
     currplayer->accuracy = stats.second;
-    std::cout << "Thanks for playing, " << currplayer->name << "! \nYou typed " << currplayer->typingSpeed << " words per minute and had " << currplayer->accuracy << "% accuracy.\nThe algorithm runtime was " << alg_runtime << " microseconds." << endl;
+    std::cout << "Thanks for playing, " << currplayer->name << "! \nYou typed " << fixed << setprecision(2) << currplayer->typingSpeed << " words per minute and had " << fixed << setprecision(2) << currplayer->accuracy << "% accuracy.\nThe algorithm runtime was " << fixed << setprecision(2) << getalg_runtime() << " milliseconds." << endl;
     pushPlayertoFile(); // Save updated player stats to file
     return true;
 }
@@ -264,7 +271,7 @@ pair<double,double> TypingGame::calculator(){
 }
 
 double TypingGame::getalg_runtime() {
-    return alg_runtime;
+    return (alg_runtime/ 100);
 }
 
 //Sort players based on performance
