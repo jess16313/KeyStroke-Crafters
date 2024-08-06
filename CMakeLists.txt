@@ -7,13 +7,9 @@ include_directories(${CMAKE_SOURCE_DIR})
 
 add_executable(KeyStroke_Crafters
         keystroke-crafters/HashTable.cpp
-        keystroke-crafters/httplib.h
-        keystroke-crafters/json.hpp
-        keystroke-crafters/main.cpp
         keystroke-crafters/TypingGame.cpp
         keystroke-crafters/BST.cpp
         keystroke-crafters/TypingGame.h
-        keystroke-crafters/main.cpp
         keystroke-crafters/main.cpp)
 
 if (WIN32)

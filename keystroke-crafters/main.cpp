@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include "httplib.h"
 #include "TypingGame.h"
 
 int main() {
